@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nxb1t.github.io/retype/sitemap.xml.gz
