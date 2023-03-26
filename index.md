@@ -1,7 +1,7 @@
 # About
 
 Hello everyone,<br>
-Welcome to my blog, here I will be sharing my latest findings and ideas in the fields of Digital Forensics and Malware analysis, as well as interesting CTF challenge writeups. I also have another blog where I previously posted CTF writeups and other tutorials, which you can find [here](https://nxb1t.neocities.org).
+Welcome to my blog, here I will be sharing my latest findings and ideas in the fields of Digital Forensics and Malware analysis. I also have another blog where I post CTF writeups and other tutorials, which you can find here : [nxb1t.neocities.org](https://nxb1t.neocities.org)
 
 ## Who Am I ?
 
