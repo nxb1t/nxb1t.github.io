@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: is-a.dev
+Token: 699736444426b5c712a13cf93674a7a209dc379f5f15926498f807772bee99bc
