@@ -2,6 +2,7 @@
 author:
     name: nxb1t
     avatar: https://nxb1t.is-a.dev/assets/img/profile.jpeg
+date: 2023-05-05
 category:
   - Android
   - Threat Intelligence
