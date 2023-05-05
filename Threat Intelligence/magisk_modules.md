@@ -127,7 +127,7 @@ Luckily our backdoor had no errors.
 
 ### Installing the module 
 
-For convenience, I renamed the module zip to `acc_backdoor.zip` and pushed it to Downloads folder using adb.
+For convenience, I renamed the module zip to `acc_backdoored.zip` and pushed it to Downloads folder using adb.
 
 ![Push the module to device](/assets/img/magisk_modules/magisk_adb_push.png)
 
