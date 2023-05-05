@@ -38,7 +38,7 @@ links:
   target: blank
 
 footer:
-  copyright: "&copy; {{ year }} - [nxb1t.github.io](https://nxb1t.github.io) - All rights reserved"
+  copyright: "&copy; {{ year }} - [nxb1t.is-a.dev](https://nxb1t.is-a.dev) - All rights reserved"
 
 editor:
   enabled: false
