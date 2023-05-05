@@ -1,7 +1,11 @@
-# About
+# Home
+
+---
 
 Hello everyone,<br>
-Welcome to my blog, here I will be sharing my latest findings and ideas in the fields of Digital Forensics and Malware analysis. I also have another blog where I post CTF writeups and other tutorials, which you can find here : [nxb1t.neocities.org](https://nxb1t.neocities.org)
+Welcome to my Research blog, here I will be sharing my latest findings and ideas in the fields of Digital Forensics and Malware analysis. I also have another blog where I post CTF writeups and other tutorials, which you can find by clicking the button below. 
+
+[!Button CTF Writeups](https://nxb1t.neocities.org)
 
 ## Who Am I ?
 
@@ -20,6 +24,8 @@ If you like my posts and have the means to support me, please consider supportin
 <a href="https://www.buymeacoffee.com/nxb1t" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Contributions
+
+---
 
 * Added ProtonVPN artifacts plugin to [ALEAPP Project](https://github.com/abrignoni/ALEAPP/pulls?q=is%3Apr+is%3Aclosed+author%3Anxb1t)
 * Proposed VLC Media Player adb backup artifacts for ALEAPP Project
