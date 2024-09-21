@@ -15,7 +15,8 @@ tags: [Active Directory, Digital Forensics, Incident Response, Threat Hunting]
 
 ## Introduction
 
-Hello everyone! It’s been a while since my last blog post. This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won't be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own. 
+Hello everyone! It’s been a while since my last blog post.<br> 
+This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won't be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own. 
 
 Before continuing, please checkout the following link to setup the AD Lab used in this blog :
 
@@ -216,7 +217,7 @@ The memory dump from C2 Machine didn't had any new tactics or techniques and wer
 
 While analyzing the logs, we didn't observe any persistence techniques used by the threat actor on any of the Windows machines. We also manually checked for backdoors in the autorun directory and other common locations, but found nothing. However, our Ubuntu machine had the least telemetry, so we need to check if any persistence mechanisms were added on that host.
 
-From the logs, we verified that the attacker did not escalate to higher privileges, as the bkp_op user was not in the sudoers group. Upon examining the .bashrc file, we found an interesting entry pointing to another .bashrc file in the .local directory.
+From the logs, we verified that the attacker did not escalate to higher privileges, as the `bkp_op` user was not in the sudoers group. Upon examining the `.bashrc` file, we found an interesting entry pointing to another .bashrc file in the .local directory.
 
 ![](/assets/img/ad_ir/persis_bashrc.png)
 
@@ -477,4 +478,5 @@ Through this blog i hope you guys got a basic understanding of practical steps i
 
 * [!ref Intrinsec - Kerberos OPSEC](https://www.intrinsec.com/kerberos_opsec_part_1_kerberoasting/)
 * [!ref No Hassle Guide to EQL for Threat Hunting](https://www.varonis.com/blog/guide-no-hassle-eql-threat-hunting)
-* [!ref Netero1010's Browser Credential Stealing Detection](https://www.netero1010-securitylab.com/detection/browser-credential-stealing-detection)
+* [!ref ImmersiveLabs - Havoc C2 Defensive Operators Guide](https://www.immersivelabs.com/blog/havoc-c2-framework-a-defensive-operators-guide/)
+* [!ref MDSec - Detecting and Advancing In-Memory .NET Tradecraft](https://www.mdsec.co.uk/2020/06/detecting-and-advancing-in-memory-net-tradecraft/)
