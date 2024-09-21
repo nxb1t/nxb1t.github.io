@@ -6,10 +6,7 @@
 
 
 Hello everyone,<br>
-I am Nashid P (nxb1t), a Computer Science student from Kerala, India. I am a passionate blogger who enjoys writing about my experiences in CTF competitions, as well as my insights and discoveries in the areas of malware analysis and DFIR. I am highly motivated to pursue a career in these fields and continuously work towards enhancing my knowledge and skills. Through my blog, I hope to share my enthusiasm with others and contribute to the community.
-
-Core Member [@TamilCTF](https://tamilctf.pages.dev/)  <br>
-Security Researcher & Member [@InitCrew](https://initcrew.com/) <br>
+I am Nashid P (nxb1t), a Security Researcher from Kerala, India. I am a passionate blogger who enjoys writing about my insights and discoveries in the areas of malware analysis and DFIR. I am highly motivated to pursue a career in these fields and continuously work towards enhancing my knowledge and skills. Through my blog, I hope to share my enthusiasm with others and contribute to the community.
 
 If you like my posts and have the means to support me, please consider supporting me here :-
 
