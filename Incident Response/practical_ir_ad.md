@@ -277,7 +277,7 @@ Once the payload is decrypted, the loader creates a new CLR instance effectively
 
 ![**CLR Mechanism in loader**](/assets/img/ad_ir/rev_loader6.png)
 
-After analyzing the loader, we examined the suspicious binary extracted from memory, which turned out to be a .NET executable. By decompiling it with dnSpy, we confirmed that it was the ransomware responsible for encrypting files. The ransomware used RC4 ecnryption and the encryption key was visible in the binary. With this key, we were able to decrypt the encrypted files.
+After analyzing the loader, we examined the suspicious binary extracted from memory, which turned out to be a .NET executable. By decompiling it with dnSpy, we confirmed that it was the ransomware responsible for encrypting files. The ransomware used RC4 encryption and the encryption key was visible in the binary. With this key, we were able to decrypt the encrypted files.
 
 ![**Decompiling the extracted binary from memory**](/assets/img/ad_ir/rev_susfiledecomp.png)
 
