@@ -20,6 +20,8 @@ Hello everyone, welcome to my blog on setting up a simple AD lab for practicing 
 
 We’re building the infrastructure for XOPS, which includes both Windows and Linux machines connected to the AD environment. The Linux systems are primarily used for automation and backup services. Certain users are restricted to logging in only on specific computers, and the Linux server has LDAP enabled for SSH authentication.
 
+In this lab we are only using **Windows Defender** as endpoint security product and not relying on any EDR/XDR products. 
+
 You can refer to [Active Directory Lab](https://github.com/AdiH8/Active-Directory-Lab) by AdiH8 for setting up the DC and configuring a basic AD Environment, this requires manual interactions, but if you prefer automated setup you can use [GOAD](https://github.com/Orange-Cyberdefense/GOAD) project.
 
 This is how my setup looks like, I have 16 GB of ram in my system, so if yours is less you can reduce the number of client machines.

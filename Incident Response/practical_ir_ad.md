@@ -18,7 +18,7 @@ tags: [Active Directory, Digital Forensics, Incident Response, Threat Hunting]
 Hello everyone! It’s been a while since my last blog post.<br> 
 This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won't be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own :). 
 
-Before continuing, please checkout the following link to setup the AD Lab used in this blog :
+Before continuing, please checkout the following link to setup the AD Lab used in this blog, The lab's theme is centered around a hypothetical tech company named **XOPS** :
 
 [!ref Active Directory Home Lab](https://nxb1t.is-a.dev/lab-setups/ad_lab/) 
 
