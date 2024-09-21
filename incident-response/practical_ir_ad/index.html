@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780233815433">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780235089403">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -15,7 +15,7 @@
     <!-- Primary Meta Tags -->
     <title>Practical Incident Response - Active Directory</title>
     <meta name="title" content="Practical Incident Response - Active Directory">
-    <meta name="description" content="Hello everyone! It’s been a while since my last blog post.">
+    <meta name="description" content="Hello everyone! It’s been a while since my last blog post. This time, I wanted to make a blog on simulating Incident Response in an Active Directory...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://nxb1t.github.io/retype/incident-response/practical_ir_ad/">
@@ -24,25 +24,25 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nxb1t.github.io/retype/incident-response/practical_ir_ad/">
     <meta property="og:title" content="Practical Incident Response - Active Directory">
-    <meta property="og:description" content="Hello everyone! It’s been a while since my last blog post.">
+    <meta property="og:description" content="Hello everyone! It’s been a while since my last blog post. This time, I wanted to make a blog on simulating Incident Response in an Active Directory...">
     <meta property="og:image" content="https://nxb1t.github.io/retype/assets/img/ad_ir/npp1.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://nxb1t.github.io/retype/incident-response/practical_ir_ad/">
     <meta property="twitter:title" content="Practical Incident Response - Active Directory">
-    <meta property="twitter:description" content="Hello everyone! It’s been a while since my last blog post.">
+    <meta property="twitter:description" content="Hello everyone! It’s been a while since my last blog post. This time, I wanted to make a blog on simulating Incident Response in an Active Directory...">
     <meta property="twitter:image" content="https://nxb1t.github.io/retype/assets/img/ad_ir/npp1.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.780233815433" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780235089403" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780233815433" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780235089403" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780233815433" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780233815433" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780235089403" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780235089403" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -289,7 +289,8 @@
         <span>Introduction</span>
     </h2>
 </doc-anchor-target>
-<p>Hello everyone! It’s been a while since my last blog post. This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won&#x27;t be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own.</p>
+<p>Hello everyone! It’s been a while since my last blog post.<br>
+This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won&#x27;t be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own.</p>
 <p>Before continuing, please checkout the following link to setup the AD Lab used in this blog :</p>
 <p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
@@ -561,7 +562,7 @@ host.name : &quot;c1&quot; and winlog.event_id: &quot;1&quot; and process.pe.ori
     </h3>
 </doc-anchor-target>
 <p>While analyzing the logs, we didn&#x27;t observe any persistence techniques used by the threat actor on any of the Windows machines. We also manually checked for backdoors in the autorun directory and other common locations, but found nothing. However, our Ubuntu machine had the least telemetry, so we need to check if any persistence mechanisms were added on that host.</p>
-<p>From the logs, we verified that the attacker did not escalate to higher privileges, as the bkp_op user was not in the sudoers group. Upon examining the .bashrc file, we found an interesting entry pointing to another .bashrc file in the .local directory.</p>
+<p>From the logs, we verified that the attacker did not escalate to higher privileges, as the <code v-pre>bkp_op</code> user was not in the sudoers group. Upon examining the <code v-pre>.bashrc</code> file, we found an interesting entry pointing to another .bashrc file in the .local directory.</p>
 <p><figure class="content-center">
     <img src="../../assets/img/ad_ir/persis_bashrc.png" alt="">
     <figcaption class="caption"></figcaption>
@@ -1034,12 +1035,26 @@ This is where LDAP query monitoring becomes useful. By creating an alert for pot
         <span class="inline-block mb-px">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
         </span>
-        <span class="inline-block font-medium ml-2">Netero1010&#x27;s Browser Credential Stealing Detection</span>
+        <span class="inline-block font-medium ml-2">ImmersiveLabs - Havoc C2 Defensive Operators Guide</span>
     </div>
     <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>https://www.netero1010-securitylab.com/detection/browser-credential-stealing-detection</span>
+        <span>https://www.immersivelabs.com/blog/havoc-c2-framework-a-defensive-operators-guide/</span>
     </div>
-    <a href="https://www.netero1010-securitylab.com/detection/browser-credential-stealing-detection" class="absolute block inset-0"></a>
+    <a href="https://www.immersivelabs.com/blog/havoc-c2-framework-a-defensive-operators-guide/" class="absolute block inset-0"></a>
+</div>
+</li>
+<li>
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">MDSec - Detecting and Advancing In-Memory .NET Tradecraft</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>https://www.mdsec.co.uk/2020/06/detecting-and-advancing-in-memory-net-tradecraft/</span>
+    </div>
+    <a href="https://www.mdsec.co.uk/2020/06/detecting-and-advancing-in-memory-net-tradecraft/" class="absolute block inset-0"></a>
 </div>
 </li>
 </ul>
