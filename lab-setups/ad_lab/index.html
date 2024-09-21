@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780237095121">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780240423184">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -37,12 +37,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.780237095121" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780240423184" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780237095121" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780240423184" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780237095121" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780237095121" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780240423184" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780240423184" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -291,6 +291,7 @@
     </h2>
 </doc-anchor-target>
 <p>We’re building the infrastructure for XOPS, which includes both Windows and Linux machines connected to the AD environment. The Linux systems are primarily used for automation and backup services. Certain users are restricted to logging in only on specific computers, and the Linux server has LDAP enabled for SSH authentication.</p>
+<p>In this lab we are only using <strong>Windows Defender</strong> as endpoint security product and not relying on any EDR/XDR products.</p>
 <p>You can refer to <a href="https://github.com/AdiH8/Active-Directory-Lab">Active Directory Lab</a> by AdiH8 for setting up the DC and configuring a basic AD Environment, this requires manual interactions, but if you prefer automated setup you can use <a href="https://github.com/Orange-Cyberdefense/GOAD">GOAD</a> project.</p>
 <p>This is how my setup looks like, I have 16 GB of ram in my system, so if yours is less you can reduce the number of client machines.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
