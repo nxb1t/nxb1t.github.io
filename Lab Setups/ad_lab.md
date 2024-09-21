@@ -146,9 +146,9 @@ Computer Configuration -> Policies -> Administrative Templates -> Windows Compon
 
 --> **LDAP Query Monitoring** <br>
 
-Monitoring LDAP queries offers an advantage in detecting potential Kerberoasting and AS-REP Roasting attempts, even if no vulnerable service accounts are present in the environment.
+Monitoring LDAP queries offers an advantage in detecting potential Kerberoasting and AS-REP Roasting attempts.
 
-So, for detailed logging of ldap queries, we will enable ldap client verbose with 4 registry keys.
+So, for detailed logging of ldap queries, we will enable ldap client verbose by updating 4 registry keys.
 
 ```
 Computer Configuration -> Preferences -> Windows Settings -> Registry
