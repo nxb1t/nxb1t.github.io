@@ -16,7 +16,7 @@ tags: [Active Directory, Digital Forensics, Incident Response, Threat Hunting]
 ## Introduction
 
 Hello everyone! It’s been a while since my last blog post.<br> 
-This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won't be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own. 
+This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won't be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own :). 
 
 Before continuing, please checkout the following link to setup the AD Lab used in this blog :
 
@@ -466,7 +466,7 @@ or I found a nice [blog](https://medium.com/@cY83rR0H1t/evil-winrm-detection-de2
 
 #### Detecting Linux Persistence Mechanisms
 
-Checkout Elastic Security's [Primer on Persitence Mechanisms](https://www.elastic.co/security-labs/primer-on-persistence-mechanisms) for a detailed walkthrough on detecting persistence mechanisms and linux detection engineering.
+Checkout Elastic Security's [Primer on Persistence Mechanisms](https://www.elastic.co/security-labs/primer-on-persistence-mechanisms) for a detailed walkthrough on detecting persistence mechanisms and linux detection engineering.
 
 ---
 
