@@ -289,8 +289,7 @@ Check out an example Incident Response scenario based on this Lab :-
 
 [!ref Practical Incident Response - Active Directory](https://nxb1t.is-a.dev/incident-response/practical_ir_ad/)
 
-Happy hunting :)
-
 ## References
 
-* [!ref GPO Monitor LDAP Queries](https://techexpert.tips/windows/gpo-monitor-ldap-queries-active-directory/)
+* [GPO Monitor LDAP Queries](https://techexpert.tips/windows/gpo-monitor-ldap-queries-active-directory/)
+* [Build it Before Breaking It](https://medium.com/bugbountywriteup/build-it-before-breaking-it-5d8c5b8171fc)

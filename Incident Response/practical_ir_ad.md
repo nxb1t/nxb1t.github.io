@@ -476,7 +476,10 @@ Through this blog i hope you guys got a basic understanding of practical steps i
 
 ## References
 
-* [!ref Intrinsec - Kerberos OPSEC](https://www.intrinsec.com/kerberos_opsec_part_1_kerberoasting/)
-* [!ref No Hassle Guide to EQL for Threat Hunting](https://www.varonis.com/blog/guide-no-hassle-eql-threat-hunting)
-* [!ref ImmersiveLabs - Havoc C2 Defensive Operators Guide](https://www.immersivelabs.com/blog/havoc-c2-framework-a-defensive-operators-guide/)
-* [!ref MDSec - Detecting and Advancing In-Memory .NET Tradecraft](https://www.mdsec.co.uk/2020/06/detecting-and-advancing-in-memory-net-tradecraft/)
+* [Intrinsec - Kerberos OPSEC](https://www.intrinsec.com/kerberos_opsec_part_1_kerberoasting/)
+* [No Hassle Guide to EQL for Threat Hunting](https://www.varonis.com/blog/guide-no-hassle-eql-threat-hunting)
+* [ImmersiveLabs - Havoc C2 Defensive Operators Guide](https://www.immersivelabs.com/blog/havoc-c2-framework-a-defensive-operators-guide/)
+* [MDSec - Detecting and Advancing In-Memory .NET Tradecraft](https://www.mdsec.co.uk/2020/06/detecting-and-advancing-in-memory-net-tradecraft/)
+* [Dr Josh Stroschein - The Cyber Yeti](https://www.youtube.com/@jstrosch)
+* [Cyber Attack & Defense](https://www.youtube.com/@CyberAttackDefense)
+* [Attack Detect Defend](https://www.youtube.com/@rot169/videos)
