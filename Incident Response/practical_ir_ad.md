@@ -20,7 +20,7 @@ This time, I wanted to make a blog on simulating Incident Response in an Active 
 
 Before continuing, please checkout the following link to setup the AD Lab used in this blog, The lab's theme is centered around a hypothetical tech company named **XOPS** :
 
-[!ref Active Directory Home Lab](https://nxb1t.is-a.dev/lab-setups/ad_lab/) 
+[!ref Active Directory Home Lab](https://nxb1t.is-a.dev/incident-response/ad_lab/) 
 
 **Ok, What is Incident Response ?** <br>
 Incident response is a structured process organizations use to detect and respond to cyber threats, security breaches, and other unexpected events. The goal of incident response is to minimize damage, reduce recovery time and costs, and restore operations. There are various models for incident response lifecycle, such as PICERL, a six-step framework, and the more modern DAIR. In our blog, we will use the DAIR (Dynamic Approach to Incident Response) model, which is a five-step, continuous approach.

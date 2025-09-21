@@ -2,11 +2,8 @@
 
 ---
 
-<img src="assets/img/profile.jpeg" width=128 height=128 style="border-radius: 6px"/> <br>
-
-
 Hello everyone,<br>
-I am Nashid P (nxb1t), an Incident Response Analyst from Kerala, India. I am a passionate blogger who enjoys writing about my insights and thoughts in the areas of malware analysis and DFIR. Through my blog, I hope to share my enthusiasm with others and contribute to the community.
+I am Nashid P (nxb1t), an Incident Response Engineer. I am a passionate blogger who enjoys writing about my insights and thoughts in the areas of malware analysis and DFIR. Through my blog, I hope to share my enthusiasm with others and contribute to the community.
 
 ## Contributions
 
