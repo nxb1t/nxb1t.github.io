@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811799665141">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811799844595">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -34,12 +34,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.11.0.811799665141" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.811799844595" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.811799665141" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.811799844595" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.811799665141" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.811799665141" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.811799844595" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.811799844595" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -241,6 +241,32 @@
                             <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
+                                <nav id="retype-breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+                                    <ol role="list">
+                                        <li class="pr-4">
+                                            <a href="../../" class="pr-4">
+                                                Who Am I ?
+                                            </a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <span class="pr-4">
+                                                Incident Response
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <a href="../../incident-response/ad_lab/" class="pr-4">
+                                                Active Directory Lab
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                
                                 <!-- Page content  -->
 <doc-anchor-target id="active-directory-lab" class="break-words">
     <h1>
@@ -277,7 +303,7 @@
 </doc-anchor-target>
 <p>We’re building the infrastructure for XOPS, which includes both Windows and Linux machines connected to the AD environment. The Linux systems are primarily used for automation and backup services. Certain users are restricted to logging in only on specific computers, and the Linux server has LDAP enabled for SSH authentication.</p>
 <p>In this lab we are only using <strong>Windows Defender</strong> as endpoint security product and not relying on any EDR/XDR products.</p>
-<p>You can refer to <a href="https://github.com/AdiH8/Active-Directory-Lab">Active Directory Lab</a> by AdiH8 for setting up the DC and configuring a basic AD Environment, this requires manual interactions, but if you prefer automated setup you can use <a href="https://github.com/Orange-Cyberdefense/GOAD">GOAD</a> project.</p>
+<p>You can refer to <a href="https://github.com/AdiH8/Active-Directory-Lab" class="outbound" target="_blank"><span>Active Directory Lab</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> by AdiH8 for setting up the DC and configuring a basic AD Environment, this requires manual interactions, but if you prefer automated setup you can use <a href="https://github.com/Orange-Cyberdefense/GOAD" class="outbound" target="_blank"><span>GOAD</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> project.</p>
 <p>This is how my setup looks like, I have 16 GB of ram in my system, so if yours is less you can reduce the number of client machines.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -572,7 +598,7 @@ Account Logon -&gt; Audit Kerberos Authentication Service , Audit Kerberos Servi
     </h3>
 </doc-anchor-target>
 <p>Sysmon offers enhanced logging capabilities for process creation, network connections, and file access-related information. Deploying Sysmon in any Active Directory (AD) environment is highly recommended for improved security monitoring.</p>
-<p>We can deploy Sysmon on all systems using GPO policy. Download the <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon">Sysmon</a> executable and create a share in the DC for deployment. Sysmon&#x27;s power relies on how we configure the tool, by default sysmon doesn&#x27;t offer high level of logging, but with proper configuration we can improve it. I used <a href="https://github.com/SwiftOnSecurity/sysmon-config">SwiftOnSecurity&#x27;s</a> sysmon config as the base config as it covers starter rules, we can modify from there based on our needs.</p>
+<p>We can deploy Sysmon on all systems using GPO policy. Download the <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon" class="outbound" target="_blank"><span>Sysmon</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> executable and create a share in the DC for deployment. Sysmon&#x27;s power relies on how we configure the tool, by default sysmon doesn&#x27;t offer high level of logging, but with proper configuration we can improve it. I used <a href="https://github.com/SwiftOnSecurity/sysmon-config" class="outbound" target="_blank"><span>SwiftOnSecurity&#x27;s</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> sysmon config as the base config as it covers starter rules, we can modify from there based on our needs.</p>
 <p><figure class="content-center">
     <img src="../../assets/img/ad_ir/sysmon_share.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption"></figcaption>
@@ -696,7 +722,7 @@ sudo apt install -y auditd</code></pre>
     </h3>
 </doc-anchor-target>
 <p>For SIEM, ELK stack is the best free option. Elastic even provides a 14 day free trial of their cloud version so we don&#x27;t have to setup anything locally.</p>
-<p>Once the free account is created, Install the elastic agent on the DC and clients, <a href="https://www.elastic.co/guide/en/fleet/current/install-fleet-managed-elastic-agent.html">refer here</a> for a detailed guide on installing the agents. Agents can be also deployed using GPO, but here i installed them manually on clients and DC.</p>
+<p>Once the free account is created, Install the elastic agent on the DC and clients, <a href="https://www.elastic.co/guide/en/fleet/current/install-fleet-managed-elastic-agent.html" class="outbound" target="_blank"><span>refer here</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> for a detailed guide on installing the agents. Agents can be also deployed using GPO, but here i installed them manually on clients and DC.</p>
 <p><figure class="content-center">
     <img src="../../assets/img/ad_ir/fleet.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption"></figcaption>
@@ -750,8 +776,8 @@ sudo apt install -y auditd</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="https://techexpert.tips/windows/gpo-monitor-ldap-queries-active-directory/">GPO Monitor LDAP Queries</a></li>
-<li><a href="https://medium.com/bugbountywriteup/build-it-before-breaking-it-5d8c5b8171fc">Build it Before Breaking It</a></li>
+<li><a href="https://techexpert.tips/windows/gpo-monitor-ldap-queries-active-directory/" class="outbound" target="_blank"><span>GPO Monitor LDAP Queries</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://medium.com/bugbountywriteup/build-it-before-breaking-it-5d8c5b8171fc" class="outbound" target="_blank"><span>Build it Before Breaking It</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
 </ul>
 
                                 <div id="retype-tags" class="flex items-center mt-6 mb-6 clear-both">
@@ -806,7 +832,7 @@ sudo apt install -y auditd</code></pre>
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© 2025 - <a href="https://nxb1t.is-a.dev">nxb1t.is-a.dev</a> - All rights reserved</p></div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© 2025 - <a href="https://nxb1t.is-a.dev" class="outbound" target="_blank"><span>nxb1t.is-a.dev</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> - All rights reserved</p></div>
                             </footer>
                         </div>
                     </div>
