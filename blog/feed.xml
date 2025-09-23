@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog</title>
+    <link>https://nxb1t.github.io/retype/blog/</link>
+    <description>Blog</description>
+    <copyright>© 2025 - nxb1t.is-a.dev - All rights reserved</copyright>
+    <lastBuildDate>Sun, 27 Jul 2025 00:00:00 GMT</lastBuildDate>
+    <generator>https://retype.com</generator>
+    <atom:link rel="self" type="application/rss+xml" href="https://nxb1t.github.io/retype/blog/feed.xml" />
+    <image>
+      <title>Blog</title>
+      <link>https://nxb1t.github.io/retype/blog/</link>
+      <url>https://nxb1t.github.io/retype/favicon.ico</url>
+    </image>
+    <item>
+      <title>Why Malware Analysis Goes Beyond Sandboxes</title>
+      <guid isPermaLink="true">https://nxb1t.github.io/retype/blog/2025-07-27-sandbox-reverse/</guid>
+      <description>Hi everyone! This is a short post to share a thought I had while working on a malware sample: Should we rely only on sandboxes?</description>
+      <author>nxb1t</author>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 GMT</pubDate>
+      <category domain="https://nxb1t.github.io/retype/categories/malware-analysis/">Malware Analysis</category>
+      <category domain="https://nxb1t.github.io/retype/categories/reverse-engineering/">Reverse Engineering</category>
+    </item>
+    <item>
+      <title>Practical Incident Response - Active Directory</title>
+      <guid isPermaLink="true">https://nxb1t.github.io/retype/blog/2024-09-21-practical-ir-ad/</guid>
+      <description>Hello everyone! It’s been a while since my last blog post. This time, I wanted to make a blog on simulating Incident Response in an Active Directory...</description>
+      <author>nxb1t</author>
+      <pubDate>Sat, 21 Sep 2024 00:00:00 GMT</pubDate>
+      <category domain="https://nxb1t.github.io/retype/categories/active-directory/">Active Directory</category>
+      <category domain="https://nxb1t.github.io/retype/categories/digital-forensics/">Digital Forensics</category>
+      <category domain="https://nxb1t.github.io/retype/categories/incident-response/">Incident Response</category>
+      <category domain="https://nxb1t.github.io/retype/categories/threat-hunting/">Threat Hunting</category>
+    </item>
+    <item>
+      <title>Active Directory Lab</title>
+      <guid isPermaLink="true">https://nxb1t.github.io/retype/blog/2024-09-20-ad-lab/</guid>
+      <description>Hello everyone, welcome to my blog on setting up a simple AD lab for practicing Incident Response, Threat Hunting, and Digital Forensics.</description>
+      <author>nxb1t</author>
+      <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
+      <category domain="https://nxb1t.github.io/retype/categories/active-directory/">Active Directory</category>
+      <category domain="https://nxb1t.github.io/retype/categories/lab/">Lab</category>
+      <category domain="https://nxb1t.github.io/retype/categories/incident-response/">Incident Response</category>
+    </item>
+    <item>
+      <title>Android Forensics - An Introduction</title>
+      <guid isPermaLink="true">https://nxb1t.github.io/retype/blog/2023-08-02-android-forensics/</guid>
+      <description>Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical...</description>
+      <author>nxb1t</author>
+      <pubDate>Wed, 02 Aug 2023 00:00:00 GMT</pubDate>
+      <category domain="https://nxb1t.github.io/retype/categories/android/">Android</category>
+      <category domain="https://nxb1t.github.io/retype/categories/digital-forensics/">Digital Forensics</category>
+    </item>
+    <item>
+      <title>Weaponizing Magisk Modules</title>
+      <guid isPermaLink="true">https://nxb1t.github.io/retype/blog/2023-05-05-magisk-modules/</guid>
+      <description>For Educational purpose only. Spreading Malware is a violation of the law, so please don't create and send any malware using the tactics discussed...</description>
+      <author>nxb1t</author>
+      <pubDate>Fri, 05 May 2023 00:00:00 GMT</pubDate>
+      <category domain="https://nxb1t.github.io/retype/categories/android/">Android</category>
+      <category domain="https://nxb1t.github.io/retype/categories/threat-intelligence/">Threat Intelligence</category>
+    </item>
+    <item>
+      <title>A Closer Look At Rust Based Malware</title>
+      <guid isPermaLink="true">https://nxb1t.github.io/retype/blog/2023-02-27-rust-malware/</guid>
+      <description>For Educational purpose only Spreading Malware is a violation of the law, so please don't create and send any malware using the tactics provided here...</description>
+      <author>nxb1t</author>
+      <pubDate>Mon, 27 Feb 2023 00:00:00 GMT</pubDate>
+      <category domain="https://nxb1t.github.io/retype/categories/malware-analysis/">Malware Analysis</category>
+      <category domain="https://nxb1t.github.io/retype/categories/threat-hunting/">Threat Hunting</category>
+      <category domain="https://nxb1t.github.io/retype/categories/threat-intelligence/">Threat Intelligence</category>
+    </item>
+    <item>
+      <title>Reversing Android Malware</title>
+      <guid isPermaLink="true">https://nxb1t.github.io/retype/blog/2022-09-13-reverse-android/</guid>
+      <description>Malware (Malicious Software) is a type of software that causes harm to your digital devices.</description>
+      <author>nxb1t</author>
+      <pubDate>Tue, 13 Sep 2022 00:00:00 GMT</pubDate>
+      <category domain="https://nxb1t.github.io/retype/categories/android/">Android</category>
+      <category domain="https://nxb1t.github.io/retype/categories/malware-analysis/">Malware Analysis</category>
+      <category domain="https://nxb1t.github.io/retype/categories/reverse-engineering/">Reverse Engineering</category>
+    </item>
+  </channel>
+</rss>
