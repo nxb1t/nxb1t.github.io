@@ -289,7 +289,7 @@ With this, our Lab is setup to log many of the events and we can conduct differe
 
 Check out an example Incident Response scenario based on this Lab :-
 
-[!ref Practical Incident Response - Active Directory](https://nxb1t.is-a.dev/incident-response/practical_ir_ad/)
+[!ref Practical Incident Response - Active Directory](https://nxb1t.is-a.dev/blog/2024-09-21-practical-ir-ad/)
 
 ## References
 

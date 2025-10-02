@@ -53,9 +53,9 @@ identifying these threats on the incident.
 **Sieze and Isolate** : Seize the device (Mostly done on criminal investigations) and Isolate it to avoid Tampering data.
 
 **Acquisition** : Create a copy of the device storage or files.
- 
+
 **Decryption** : Decrypt the storage if its encrypted.
- 
+
 **Analysis** : Analyse the collected evidence.
 
 ### Types Of Android Device Acquisitions
@@ -260,7 +260,7 @@ Select the required Modules, In our case I have only selected Picture Analyzer, 
 
 ![Autopsy Modules](/assets/img/android_forensics/autopsy-modules.png)
 
-Once it starts processing the image, we can see many data artifacts such as call logs, contacts, messages etc in real-time. 
+Once it starts processing the image, we can see many data artifacts such as call logs, contacts, messages etc in real-time.
 
 ![Artifacts List](/assets/img/android_forensics/artifacts-list.png)
 

@@ -15,12 +15,12 @@ tags: [Active Directory, Digital Forensics, Incident Response, Threat Hunting]
 
 ## Introduction
 
-Hello everyone! It’s been a while since my last blog post.<br> 
-This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won't be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own :). 
+Hello everyone! It’s been a while since my last blog post.<br>
+This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area. While I am not an expert in Incident Response, I have some basic knowledge and also really passionate about this field. Here I won't be showing how I carried out the attack simulation, I will leave it for you guys to explore on your own :).
 
 Before continuing, please checkout the following link to setup the AD Lab used in this blog, The lab's theme is centered around a hypothetical tech company named **XOPS** :
 
-[!ref Active Directory Home Lab](https://nxb1t.is-a.dev/incident-response/ad_lab/) 
+[!ref Active Directory Home Lab](https://nxb1t.is-a.dev/labs/ad_lab/)
 
 **Ok, What is Incident Response ?** <br>
 Incident response is a structured process organizations use to detect and respond to cyber threats, security breaches, and other unexpected events. The goal of incident response is to minimize damage, reduce recovery time and costs, and restore operations. There are various models for incident response lifecycle, such as PICERL, a six-step framework, and the more modern DAIR. In our blog, we will use the DAIR (Dynamic Approach to Incident Response) model, which is a five-step, continuous approach.
@@ -42,7 +42,7 @@ There are multiple job roles for Incident Response :-
 * A **Security Analyst L2** analyzes incidents and conducts threat hunting
 * A **Security Analyst L3** investigates complex incidents and leads response efforts
 
-We are kind of doing the jobs of all roles in this blog :D. 
+We are kind of doing the jobs of all roles in this blog :D.
 
 ---
 
@@ -249,7 +249,7 @@ NtGetThreadContext and NtSetThreadContext function calls were also seen, which a
 
 ![**Using NtGetThreadContext and NtSetThreadContext**](/assets/img/ad_ir/rev_loader5.png)
 
-Going further, we encountered an interesting string. Its been processed inside a loop with range 256 which sort of correlates with CAPA result of RC4 encryption. 
+Going further, we encountered an interesting string. Its been processed inside a loop with range 256 which sort of correlates with CAPA result of RC4 encryption.
 
 ![**Interesting string found**](/assets/img/ad_ir/rev_loader3.png)
 
@@ -311,7 +311,7 @@ From this incident, we gained valuable insights, such as the need for a proper a
 
 #### Detecting CLR Loader
 
-While analyzing the loader's memory, we found an indicator that may suggest the execution of .NET assemblies in memory: the presence of CLR DLLs, the loader was written in rust so no way it loads clr.dll by default. So by tweaking our sysmon config we can add more visibility on module loading and detect if any malicious beacons are running in our system. 
+While analyzing the loader's memory, we found an indicator that may suggest the execution of .NET assemblies in memory: the presence of CLR DLLs, the loader was written in rust so no way it loads clr.dll by default. So by tweaking our sysmon config we can add more visibility on module loading and detect if any malicious beacons are running in our system.
 
 The given rule is a basic one that logs when `clr.dll` is loaded by any process, excluding those running from the Windows directory. As a result, even if a normal .NET application is run, it will be logged. This may lead to false positives, but with proper correlation, we can identify potential CLR loaders and inline execution of .NET assemblies.
 
@@ -370,7 +370,7 @@ rule rust_veh_loader {
 
 #### Detecting Kerberoasting
 
-Kerberoasting is a very serious security issue we need to continuosly monitor. During log analysis, we detected kerberoasting attempts, based on the queries we can create an alert rule to quickly notify us in case of any potential Kerberoasting attempt. 
+Kerberoasting is a very serious security issue we need to continuosly monitor. During log analysis, we detected kerberoasting attempts, based on the queries we can create an alert rule to quickly notify us in case of any potential Kerberoasting attempt.
 
 We can create new alert rules in Elastic SIEM by going to **Security --> Rules --> Create new rule**.
 
@@ -384,11 +384,11 @@ This is the correlation rule we developed to detect Kerberoasting attacks in our
 
 ```js query
 sequence by source.ip
-      [network where winlog.event_id == "3" 
+      [network where winlog.event_id == "3"
        and destination.port == "88"
        and not process.executable == "C:\\Windows\\system32\\lsass.exe"]
-      [authentication where winlog.event_id == "4769" 
-       and winlog.event_data.TicketEncryptionType == "0x17" 
+      [authentication where winlog.event_id == "4769"
+       and winlog.event_data.TicketEncryptionType == "0x17"
        and (winlog.event_data.TicketOptions == "0x40800000" or winlog.event_data.TicketOptions == "0x40810010")]
 ```
 
@@ -435,7 +435,7 @@ When we check the Chrome processes in Process Hacker, we can see that one Chrome
 
 ![**Chrome Process List**](/assets/img/ad_ir/detect_chrome_proc.png)
 
-When we check event ID **4663**, we can see that the injected Chrome process has accessed the `Login Data` and `Local State` files, which at first glance may appear to be legitimate activity. 
+When we check event ID **4663**, we can see that the injected Chrome process has accessed the `Login Data` and `Local State` files, which at first glance may appear to be legitimate activity.
 
 In the generated event, process id is shown in hex format, thats why I entered `0x1684` in query which equals to `5764`.
 
