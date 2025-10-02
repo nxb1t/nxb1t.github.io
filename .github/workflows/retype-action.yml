@@ -20,8 +20,8 @@ jobs:
       - uses: retypeapp/action-build@latest
         env:
           RETYPE_KEY: ${{ secrets.RETYPE_KEY }}
-          
+          RETYPE_PASSWORD: ${{ secrets.RETYPE_PASSWORD }}
+
       - uses: retypeapp/action-github-pages@latest
         with:
           update-branch: true
-          
