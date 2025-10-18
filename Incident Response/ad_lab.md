@@ -12,7 +12,9 @@ tags: [Active Directory, Lab, Incident Response]
 
 # Active Directory Lab
 
-Hello everyone, welcome to my blog on setting up a simple AD lab for practicing Incident Response, Threat Hunting, and Digital Forensics. Once set up, the lab can be easily customized based on use cases, making it more flexible. In this blog, I am focusing only on a host-based incident response scenario, so the policies and integrations I am adding are tailored to that. To make the lab more realistic, the lab's theme is centered around a hypothetical tech company named **XOPS**.
+Hello everyone, welcome to my blog on setting up a simple AD lab for practicing Incident Response, Threat Hunting, and Digital Forensics. Once set up, the lab can be easily customized based on use cases, making it more flexible. In this blog, I am focusing only on a host-based incident response scenario, so the policies and integrations I am adding are tailored to that. To make the lab more realistic, the lab's theme is centered around a hypothetical tech company named **XOPS**. Checkout the blog utilizing this lab :-
+
+[!ref Practical Incident Response](https://nxb1t.is-a.dev/incident-response/practical_ir_ad/)
 
 ---
 
@@ -20,7 +22,7 @@ Hello everyone, welcome to my blog on setting up a simple AD lab for practicing 
 
 We’re building the infrastructure for XOPS, which includes both Windows and Linux machines connected to the AD environment. The Linux systems are primarily used for automation and backup services. Certain users are restricted to logging in only on specific computers, and the Linux server has LDAP enabled for SSH authentication.
 
-In this lab we are only using **Windows Defender** as endpoint security product and not relying on any EDR/XDR products. 
+In this lab we are only using **Windows Defender** as endpoint security product and not relying on any EDR/XDR products.
 
 You can refer to [Active Directory Lab](https://github.com/AdiH8/Active-Directory-Lab) by AdiH8 for setting up the DC and configuring a basic AD Environment, this requires manual interactions, but if you prefer automated setup you can use [GOAD](https://github.com/Orange-Cyberdefense/GOAD) project.
 
@@ -84,9 +86,9 @@ In this section we will setup logging mechanisms for both Windows and Ubuntu Mac
 
 ### Setting Up Auditing in Windows Machines
 
-Active Directory provides auditing capabilities, with audit policies created and managed through Group Policy Objects (GPOs). These audit policies provide visibility into various security-related activities, such as account logon attempts, changes to user accounts, access to sensitive resources, and system-level events. 
+Active Directory provides auditing capabilities, with audit policies created and managed through Group Policy Objects (GPOs). These audit policies provide visibility into various security-related activities, such as account logon attempts, changes to user accounts, access to sensitive resources, and system-level events.
 
-New GPO can be created by right clicking on Domain in Group Policy Management application in DC Machine. 
+New GPO can be created by right clicking on Domain in Group Policy Management application in DC Machine.
 
 ![](/assets/img/ad_ir/group_policies.png)
 
@@ -97,7 +99,7 @@ Logon events help us identify any malicious or anomalous behaviors related to us
 
 | Event ID | Description|
 |---------|-------------|
-|**4624** | An account successfully logged in | 
+|**4624** | An account successfully logged in |
 |**4964** | Special Group has been assigned to new logon |
 
 -> **Kerberos Auditing** <br>
@@ -105,7 +107,7 @@ Kerberos events gives us better visibility into how tickets are used and helps d
 
 | Event ID | Description |
 |---------|-------------|
-|**4768** | A Kerberos authentication (TGT) was requested | 
+|**4768** | A Kerberos authentication (TGT) was requested |
 |**4769** | A Kerberos service ticket was requested |
 
 -> **Privilege Auditing** <br>
@@ -113,22 +115,22 @@ Sensitive privilege events helps us identify unusual usage of elevated permissio
 
 | Event ID | Description |
 |---------|-------------|
-|**4672** | Special privileges assigned to new logon | 
+|**4672** | Special privileges assigned to new logon |
 |**4673** | A privileged service was called |
 
-These event logging can be enabled under <br> 
+These event logging can be enabled under <br>
 ```
 Computer Configuration -> Policies -> Windows Settings -> Security Settings -> Advanced Audit Policy Configuration -> Audit Policies
 ```
 
 * **Logon Auditing** : Logon/Logoff -> Audit Logon , Audit Special Logon
-* **Kerberos Auditing** : <br> 
+* **Kerberos Auditing** : <br>
 Account Logon -> Audit Kerberos Authentication Service , Audit Kerberos Service Ticket Operations
 * **Privilege Auditing** : Privilege Use -> Audit Sensitive Privilege Use
 
 ![](/assets/img/ad_ir/ad_policies.png)
 
---> **Powershell Logging** <br> 
+--> **Powershell Logging** <br>
 
 Powershell logging is essential to identify malicious scripts run on endpoints, it can be enabled under :-
 
@@ -138,8 +140,8 @@ Computer Configuration -> Policies -> Administrative Templates -> Windows Compon
 
 | Event ID | Description |
 |---------|-------------|
-|**4103** | Powershell Module Logging | 
-|**4104** | Powershell Script Block Logging | 
+|**4103** | Powershell Module Logging |
+|**4104** | Powershell Script Block Logging |
 
 
 ![](/assets/img/ad_ir/powershell_logging.png)
@@ -158,7 +160,7 @@ Computer Configuration -> Preferences -> Windows Settings -> Registry
 |----|--------|-------------------|----------------------------------------------------|----------------------|---------------|------------|---------|
 | 1  | Update | HKEY_LOCAL_MACHINE| SYSTEM\CurrentControlSet\Services\NTDS\Diagnostics | 15 Field Engineering | REG_DWORD     |  5         | Decimal |
 | 2  | Update | HKEY_LOCAL_MACHINE| SYSTEM\CurrentControlSet\Services\NTDS\Parameters  | Expensive Search Results Threshold  | REG_DWORD| 1| Decimal |
-| 3  | Update | HKEY_LOCAL_MACHINE| SYSTEM\CurrentControlSet\Services\NTDS\Parameters  | Inefficient Search Results Threshold| REG_DWORD| 1| Decimal | 
+| 3  | Update | HKEY_LOCAL_MACHINE| SYSTEM\CurrentControlSet\Services\NTDS\Parameters  | Inefficient Search Results Threshold| REG_DWORD| 1| Decimal |
 | 4  | Update | HKEY_LOCAL_MACHINE| SYSTEM\CurrentControlSet\Services\NTDS\Parameters  | Search Time Threshold (msecs)       | REG_DWORD| 1| Decimal |
 
 ![](/assets/img/ad_ir/ldap_registry.png)
@@ -231,7 +233,7 @@ Some Important event ids generated by Sysmon are :- <br>
 
 | Event ID | Description |
 |---------|-------------|
-|**1** | Process Created | 
+|**1** | Process Created |
 |**3** | Network Connection |
 |**7** | Image Loaded |
 |**11** | File Create |
