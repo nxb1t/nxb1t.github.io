@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-root" content="/retype">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824223940090">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.12.0">
+
+    <!-- Primary Meta Tags -->
+    <title>MCP for DFIR</title>
+    <meta name="title" content="MCP for DFIR">
+    <meta name="description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://nxb1t.github.io/retype/artificial-intelligence/mcp_for_dfir/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nxb1t.github.io/retype/artificial-intelligence/mcp_for_dfir/">
+    <meta property="og:title" content="MCP for DFIR">
+    <meta property="og:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and...">
+    <meta property="og:image" content="https://nxb1t.github.io/retype/assets/img/mcp_for_dfir/mcp_cover.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nxb1t.github.io/retype/artificial-intelligence/mcp_for_dfir/">
+    <meta property="twitter:title" content="MCP for DFIR">
+    <meta property="twitter:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and...">
+    <meta property="twitter:image" content="https://nxb1t.github.io/retype/assets/img/mcp_for_dfir/mcp_cover.png">
+
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
+
+    <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
+    <link href="../../resources/css/retype.css?v=3.12.0.824223940090" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824223940090" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824223940090" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.824223940090" defer></script>
+</head>
+<body>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+        <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+    
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">nxb1t</span>
+                        </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">is-a.dev</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav id="retype-header-nav" class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://nxb1t.neocities.org" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M8.75 7a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5h-7.5ZM7 11.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75ZM9.75 15a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z"></path><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"></path>
+                                        </g>
+                                    </svg>
+                                    <span>CTF Writeups</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/nxb1t" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </g>
+                                    </svg>
+                                    <span>GitHub</span>
+                                </a>
+                            </li>
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.linkedin.com/in/nashid-p-694842226" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                        <g fill="currentColor">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                        </g>
+                                    </svg>
+                                    <span>LinkedIn</span>
+                                </a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="retype-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+    
+        <div id="retype-container" class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+            
+                <div class="flex items-center h-16 px-6">
+                    <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-none focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                    <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://nxb1t.neocities.org" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M8.75 7a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5h-7.5ZM7 11.75a.75.75 0 0 1 .75-.75h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1-.75-.75ZM9.75 15a.75.75 0 0 0 0 1.5h6.5a.75.75 0 0 0 0-1.5h-6.5Z"></path><path d="M2 3.75C2 2.784 2.784 2 3.75 2h16.5c.966 0 1.75.784 1.75 1.75v16.5A1.75 1.75 0 0 1 20.25 22H3.75A1.75 1.75 0 0 1 2 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v16.5c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25V3.75a.25.25 0 0 0-.25-.25Z"></path>
+                                                </g>
+                                            </svg>
+                                            <span>CTF Writeups</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/nxb1t" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                                </g>
+                                            </svg>
+                                            <span>GitHub</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.linkedin.com/in/nashid-p-694842226" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
+                                                <g fill="currentColor">
+                                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                                </g>
+                                            </svg>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 bg-body-bg">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="retype-markdown" id="retype-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="retype-sidebar-right-toggle"></div>
+                                <nav id="retype-breadcrumb" class="breadcrumb" aria-label="Breadcrumb">
+                                    <ol role="list">
+                                        <li class="pr-4">
+                                            <a href="../../" class="pr-4">
+                                                Home
+                                            </a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <span class="pr-4">
+                                                Artificial Intelligence
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/>
+                                            </svg>
+                                        </li>
+                                        <li class="pr-4">
+                                            <a href="../../artificial-intelligence/mcp_for_dfir/" class="pr-4">
+                                                MCP for DFIR
+                                            </a>
+                                        </li>
+                                    </ol>
+                                </nav>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="mcp-for-dfir" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mcp-for-dfir">#</doc-anchor-trigger>
+        <span>MCP for DFIR</span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <img class="object-cover" src="https://nxb1t.is-a.dev/assets/img/profile.jpeg">
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">nxb1t</div>
+        </div>
+    </div>
+    <div class="mx-2">&#9679;</div>
+    <div>In&nbsp;</div>
+    <div><a href="../../categories/artificial-intelligence/">Artificial Intelligence</a>,&nbsp;</div>
+    <div><a href="../../categories/malware-analysis/">Malware Analysis</a>,&nbsp;</div>
+    <div><a href="../../categories/threat-intelligence/">Threat Intelligence</a></div>
+    <div class="mx-2">&#9679;</div>
+    <div class="flex items-center shrink-0">Published&nbsp;<span>2026-02-12</span></div>
+</div>
+
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/mcp_cover.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<p>Hello Everyone,<br>
+I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more. This got me thinking about applying it to DFIR use cases, like Digital Forensics and Malware Analysis.
+While there are already many MCP servers available for DFIR, I wanted to build some on my own to better understand the architecture, as well as explore some readily available servers from reputable sources. So In this post, I will cover setting up a local LLM and building some simple MCP servers specifically for DFIR.</p>
+<doc-anchor-target id="a-brief-intro-on-llm-and-mcp">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#a-brief-intro-on-llm-and-mcp">#</doc-anchor-trigger>
+        <span>A Brief Intro on LLM and MCP</span>
+    </h2>
+</doc-anchor-target>
+<p>An LLM, or Large Language Model, is a type of AI model trained on vast amounts of data to understand, generate, and process human-like language. There are a few key terms to know when dealing with LLM models:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parameter</td>
+<td>The internal weights and biases of a model. The higher the parameter count, the better the results.</td>
+</tr>
+<tr>
+<td>Tokens</td>
+<td>Tokens are pieces of words processed by the LLM models. A word can be split into different pieces to form a token.</td>
+</tr>
+<tr>
+<td>Context Length / Window</td>
+<td>The amount of text the LLM can “remember” and consider when generating a response, including both the user’s inputs and the model&#x27;s own outputs. Larger context sizes allow for more nuanced and relevant output.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <a href="https://modelcontextprotocol.io/docs/getting-started/intro" class="outbound" target="_blank"><span>Model Context Protocol (MCP)</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> is an open standard that allows an AI model to connect with and use external tools, data sources, and APIs. The protocol is designed to provide the AI with context and the ability to act on that information. With the help of MCP, it is possible to perform many tasks using natural language, making analysis and research much easier.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/diagram.png" alt="MCP Architecture Diagram" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">MCP Architecture Diagram</figcaption>
+</figure>
+</p>
+<p>Here is a generic example: we ask the model to get the current weather for a city. Our LLM client first checks if any MCP servers are set up. If they are, it asks the MCP server for available tools and sends the city name as a parameter to the compatible tool. The tool then calls a weather provider’s API to get the current data. It returns the result in a format the AI model can understand, and the model then responds based on that data.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/mcpweather.png" alt="Weather MCP" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Weather MCP</figcaption>
+</figure>
+</p>
+<hr>
+<doc-anchor-target id="why-local-llm">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-local-llm">#</doc-anchor-trigger>
+        <span>Why Local LLM</span>
+    </h2>
+</doc-anchor-target>
+<p><em>Why use a local LLM when popular chatbots like ChatGPT, Claude, and Gemini exist?</em> <br> In most real-world cases, there is a significant amount of confidential data to be analyzed that cannot be casually uploaded to cloud-based chatbots. To keep data secure, it is best to utilize locally hosted LLMs.</p>
+<p>An ideal architecture would involve serving LLMs and MCP tools on a virtual machine or inside a Docker container with security controls in-place. This ensures isolation from the host and prevents accidental data exposure, keeping the entire analysis stack in a sandboxed environment.</p>
+<hr>
+<doc-anchor-target id="local-llm-setup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#local-llm-setup">#</doc-anchor-trigger>
+        <span>Local LLM Setup</span>
+    </h2>
+</doc-anchor-target>
+<p>To run a local LLM, there are two popular options: <a href="https://ollama.com/download/" class="outbound" target="_blank"><span>Ollama</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> and <a href="http://lmstudio.ai" class="outbound" target="_blank"><span>LM Studio</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. Both are user-friendly. LM Studio offers a graphical user interface (GUI), which makes it simple to adjust model settings and parameters, while Ollama is lightweight and well-suited for running in headless mode. It also provides a GUI. However, it is not as advanced as LM Studio.
+Currently, LM Studio performs best on macOS because it leverages Apple’s native MLX libraries. On Windows and Linux, both LM Studio and Ollama offer comparable performance. For this blog, I will primarily be using LM Studio.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The LLM models discussed in this blog can run on most GPUs with 4 GB or more of VRAM. If your GPU has less memory, you can still run smaller models with fewer parameters (such as 1.7B or 0.6B). However, output accuracy depends heavily on the model&#x27;s parameters. Generally, the higher the parameter count, the higher the accuracy.</p>
+<p>For practical LLM usage, you will definitely need more than 16 GB of VRAM to achieve useful results. Because MCP tool calls and other data can easily consume significant context length, you should aim for a context window of over 100k tokens to effectively perform Agentic investigations.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="installing-llm-model">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-llm-model">#</doc-anchor-trigger>
+        <span>Installing LLM Model</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>LM Studio</strong></p>
+<p>Installing models in LM Studio is straightforward: just click the Models Search button to open the search dialog and install any model you like. For this blog, I am using the <strong>Qwen3 4B 2507</strong> model, which performed well compared to other models with similar parameter weights.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/lmstudio-discover.png" alt="LM Studio - Discover Models" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">LM Studio - Discover Models</figcaption>
+</figure>
+</p>
+<p><strong>Ollama</strong></p>
+<p>The default Qwen 3 4B 2507 Instruct model doesn&#x27;t support the GGUF format required by Ollama, so I used the <a href="https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF" class="outbound" target="_blank"><span>Qwen3-4B-Instruct-2507-GGUF</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> model by unsloth.ai from Hugging Face. We can download the model using the following command:</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">ollama pull hf.co/unsloth/Qwen3-4B-Instruct-2507-GGUF</code></pre>
+</doc-codeblock></div>
+<p>The <code translate="no" v-pre>hf.co/unsloth/Qwen3-4B-Instruct-2507-GGUF</code> model uses 4.1 GB of VRAM while running with an 8192 context length. You can adjust the context length depending on your specific needs by referring <a href="https://docs.ollama.com/context-length" class="outbound" target="_blank"><span>ollama docs</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/ollama-ram.png" alt="Ollama resource usage" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Ollama resource usage</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="openwebui">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openwebui">#</doc-anchor-trigger>
+        <span>OpenWebUI</span>
+    </h4>
+</doc-anchor-target>
+<p>Many open-source chat interfaces, such as AnythingLLM and LibreChat, are available for Ollama. However, I chose <a href="https://openwebui.com" class="outbound" target="_blank"><span>OpenWebUI</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> because it offers a clean, ChatGPT-like interface and an easy installation process.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash"># This will start openwebui on port 8080
+docker run -d --network=host -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:slim</code></pre>
+</doc-codeblock></div>
+<p>In the Ollama API section inside <strong>Admin Panel --&gt; Settings</strong>, specify the <code translate="no" v-pre>http://127.0.0.1:11434</code> endpoint. If your Ollama instance is on a separate server, use that IP instead of localhost. You can also specify other OpenAI API-compatible servers, such as the LM Studio server.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/openwebui-settings.png" alt="LLM API Settings" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">LLM API Settings</figcaption>
+</figure>
+</p>
+<p>That&#x27;s it! We have a working, ChatGPT-like local LLM ready.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/openwebui.png" alt="OpenWebUI - Interface" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">OpenWebUI - Interface</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="ollmcp">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ollmcp">#</doc-anchor-trigger>
+        <span>ollmcp</span>
+    </h4>
+</doc-anchor-target>
+<p>If you want MCP tool support without a resource-intensive GUI, <a href="https://github.com/jonigl/mcp-client-for-ollama" class="outbound" target="_blank"><span>ollmcp</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> is an excellent choice. It is a Terminal User Interface (TUI) app with built-in MCP support.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">pip3 install ollmcp</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/ollmcp-3.png" alt="ollmcp - Interface" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">ollmcp - Interface</figcaption>
+</figure>
+</p>
+<hr>
+<doc-anchor-target id="mcp-server-structure">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mcp-server-structure">#</doc-anchor-trigger>
+        <span>MCP Server Structure</span>
+    </h2>
+</doc-anchor-target>
+<p>Now, let&#x27;s look at the MCP servers that we can integrate with our local LLM setup. MCP servers can be created in various languages, including C, JavaScript, and Python. For simplicity, I will use Python and the <code translate="no" v-pre>fastmcp</code> library.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">pip3 install fastmcp</code></pre>
+</doc-codeblock></div>
+<p>Below is a simple MCP server that returns &quot;Hello World.&quot; We begin by importing the FastMCP library. Next, we initialize FastMCP to name our server. We use the <code translate="no" v-pre>@mcp.tool()</code> decorator to make the function MCP-compliant. The rest of the code is structured similarly to a typical Flask API endpoint. We also include a docstring within the function to describe the tool&#x27;s purpose, which serves as metadata for the LLM.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-python" data-line="5,16,7-11"><code v-pre class="language-python">from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP(&quot;HelloMCP&quot;)
+
+@mcp.tool()
+def say_hello(ip: str) -&gt; str:
+    &quot;&quot;&quot;
+    Say Hello World
+    Returns:
+        responds hello world text
+    &quot;&quot;&quot;
+    return &quot;Hello World&quot;
+
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run(transport='stdio')</code></pre>
+</doc-codeblock></div>
+<p>There are two primary transport methods for MCP servers:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Transport Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stdio</td>
+<td>The client launches the MCP server as a subprocess and communicates through standard input/output channels. Errors are sent to stderr.</td>
+</tr>
+<tr>
+<td>Streamable HTTP</td>
+<td>The server operates as an independent process that can handle multiple connections. The MCP client communicates with the server via HTTP GET/POST requests at a single endpoint (e.g., <code translate="no" v-pre>/mcp</code>).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="configuring-mcp-server">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-mcp-server">#</doc-anchor-trigger>
+        <span>Configuring MCP Server</span>
+    </h3>
+</doc-anchor-target>
+<p>Here is how to configure an MCP server for different open-source LLM clients.</p>
+<doc-anchor-target id="openwebui-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openwebui-1">#</doc-anchor-trigger>
+        <span>OpenWebUI</span>
+    </h4>
+</doc-anchor-target>
+<p>OpenWebUI requires OpenAPI-standard MCP servers, it does not support <code translate="no" v-pre>stdio</code> or standard streamable HTTP servers directly. We can use the <code translate="no" v-pre>mcpo</code> Python package to convert any <code translate="no" v-pre>stdio</code> MCP server to the OpenAPI standard.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">pip3 install mcpo
+mcpo -- python3 your-mcp-server.py # This will run openapi standard MCP server on http://0.0.0.0:8000/</code></pre>
+</doc-codeblock></div>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/openwebui-mcp-config.png" alt="OpenWebUI - MCP Config" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">OpenWebUI - MCP Config</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="lm-studio-and-ollmcp">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lm-studio-and-ollmcp">#</doc-anchor-trigger>
+        <span>LM Studio and ollmcp</span>
+    </h4>
+</doc-anchor-target>
+<p>For both ollmcp and LM Studio, MCP configuration files are stored in JSON format. LM Studio configurations are located at <code translate="no" v-pre>$HOME/.lmstudio/mcp.json</code>, while for <code translate="no" v-pre>ollmcp</code>, you can pass the configuration file path as an argument.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">ollmcp --servers-json ./servers.json --model hf.co/unsloth/Qwen3-4B-Instruct-2507-GGUF:Q4_K_M</code></pre>
+</doc-codeblock></div>
+<p>Example MCP configuration file for both ollmcp and LM Studio:</p>
+<doc-tabs>
+<doc-tab v-cloak id="stdio">
+<template #title>stdio</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;weather&quot;: {
+      &quot;command&quot;: &quot;python3&quot;,
+      &quot;args&quot;: [&quot;/path/to/weather.py&quot;],
+      &quot;enabled&quot;: true,
+    }
+  }
+}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab v-cloak id="streamable-http">
+<template #title>streamable-http</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;weather&quot;: {
+      &quot;url&quot;: &quot;http://localhost:8000/mcp&quot;,
+      &quot;enabled&quot;: true,
+    }
+  }
+}</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<hr>
+<doc-anchor-target id="practical-use-cases">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#practical-use-cases">#</doc-anchor-trigger>
+        <span>Practical Use Cases</span>
+    </h2>
+</doc-anchor-target>
+<p>Let’s look at some practical applications of MCP servers in threat intelligence, threat hunting, digital forensics, and malware analysis.</p>
+<doc-anchor-target id="threat-intelligence">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#threat-intelligence">#</doc-anchor-trigger>
+        <span>Threat Intelligence</span>
+    </h3>
+</doc-anchor-target>
+<p>During investigations, we may find multiple IOCs, which could be IPs, domains, URLs, or file hashes. Most of the time, this involves manual searching on threat intel platforms. However, by building an MCP server around these platforms, we can get better contextual data and even capture the minute details that may be missed during manual searching. Here, I have created a simple MCP server to check IP reputation using AbuseIPDB. This is just a foundational example.</p>
+<doc-panel id="code" collapsed>
+    <template #title>Code</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from mcp.server.fastmcp import FastMCP
+import json
+import requests
+import os
+
+ABUSEIPDB_API = os.environ.get(&quot;ABUSEAPI_KEY&quot;)
+
+mcp = FastMCP(&quot;ThreatMCP&quot;)
+
+@mcp.tool()
+def check_ip_abuseipdb(ip: str) -&gt; str:
+    &quot;&quot;&quot;
+    Get IP reputation from AbuseIPDB service
+    Args:
+        ip (str): IP Address
+    Returns:
+        Json result showing the reputation of IP, high confidence score and report means highly malicious
+    &quot;&quot;&quot;
+
+    try:
+        url = &quot;https://api.abuseipdb.com/api/v2/check&quot;
+        query = {
+            &quot;ipAddress&quot; : ip,
+            &quot;maxAgeInDays&quot; : &quot;90&quot;
+        }
+
+        headers = {
+            &quot;Accept&quot; : &quot;application/json&quot;,
+            &quot;Key&quot; : ABUSEIPDB_API
+        }
+
+        response = requests.request(method='GET', url=url, headers=headers, params=query)
+        res = json.loads(response.text)
+        return json.dumps(res)
+    except Exception as e:
+        return str(e)
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run(transport='stdio')</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/threatmcp.png" alt="Threat Intelligence MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Threat Intelligence MCP Server</figcaption>
+</figure>
+</p>
+<p>You can add other services like ThreatFox, MalwareBazaar, URLhaus, and VirusTotal to turn this into a comprehensive threat intelligence MCP server. Here is an example of checking an IOC found in the recent <a href="https://www.huntress.com/blog/active-exploitation-solarwinds-web-help-desk-cve-2025-26399" class="outbound" target="_blank"><span>SolarWinds WHD Exploitation blog by Huntress</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> with all the above mentioned features included:</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/threatmcp-git.png" alt="Advanced Threat Intelligence MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Advanced Threat Intelligence MCP Server</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="digital-forensics">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#digital-forensics">#</doc-anchor-trigger>
+        <span>Digital Forensics</span>
+    </h3>
+</doc-anchor-target>
+<p>In Digital Forensics, I will take Memory Forensics as an example. To make Memory Forensics a little easier, I created a simple Volatility3 MCP Server. Here is a Linux Memory Forensics <a href="https://www.iblue.team/ctf-challenges/13cubed-linux-memory-forensics" class="outbound" target="_blank"><span>challenge</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> from the iBlueTeam site being solved using this MCP server. Similarly, you can create MCP servers for Sleuthkit and other forensics tools to improve analysis speed. False positives may occur, so it remains the analyst&#x27;s duty to verify and filter the results.</p>
+<doc-panel id="code" collapsed>
+    <template #title>Code</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-python"><code v-pre class="language-python">from mcp.server.fastmcp import FastMCP
+import subprocess
+import json
+from pathlib import Path
+from typing import List, Dict
+
+# Configuration
+VOLATILITY_PATH = &quot;&quot;  # Path to Volatility3
+BASE_PATH = Path(&quot;&quot;)  # Memory dumps directory
+
+mcp = FastMCP(&quot;VolMCP&quot;)
+
+# Ensure directory exists
+BASE_PATH.mkdir(parents=True, exist_ok=True)
+
+
+def list_memory_dumps() -&gt; List[str]:
+    &quot;&quot;&quot;List all memory dump files&quot;&quot;&quot;
+    extensions = ['.raw', '.mem', '.dmp', '.vmem', '.bin', '.dump']
+    files = []
+    for ext in extensions:
+        files.extend([f.name for f in BASE_PATH.glob(f&quot;*{ext}&quot;)])
+    return sorted(files)
+
+
+def run_vol_command(args: List[str], timeout: int = 300) -&gt; Dict:
+    &quot;&quot;&quot;Run volatility command with error handling&quot;&quot;&quot;
+    try:
+        result = subprocess.run(
+            args, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            text=True, timeout=timeout
+        )
+        return {
+            'success': result.returncode == 0,
+            'output': result.stdout,
+            'error': result.stderr
+        }
+    except subprocess.TimeoutExpired:
+        return {'success': False, 'output': '', 'error': f'Timeout after {timeout}s'}
+    except Exception as e:
+        return {'success': False, 'output': '', 'error': str(e)}
+
+
+@mcp.tool()
+def list_dumps() -&gt; str:
+    &quot;&quot;&quot;List available memory dump files&quot;&quot;&quot;
+    try:
+        dumps = []
+        for filename in list_memory_dumps():
+            filepath = BASE_PATH / filename
+            size_mb = filepath.stat().st_size / (1024 * 1024)
+            dumps.append({'filename': filename, 'size_mb': round(size_mb, 2)})
+        
+        return json.dumps({
+            'status': 'success',
+            'count': len(dumps),
+            'dumps': dumps
+        }, indent=2)
+    except Exception as e:
+        return json.dumps({'status': 'error', 'error': str(e)})
+
+
+@mcp.tool()
+def check_os(filename: str) -&gt; str:
+    &quot;&quot;&quot;Identify OS from memory dump using Volatility plugins&quot;&quot;&quot;
+    filepath = BASE_PATH / filename
+    
+    if not filepath.exists():
+        return json.dumps({
+            'status': 'error',
+            'error': f'File not found: {filename}',
+            'available_dumps': list_memory_dumps()
+        })
+    
+    os_info = {'filename': filename}
+    
+    # Try Windows detection using windows.info
+    result = run_vol_command([
+        &quot;python3&quot;, VOLATILITY_PATH, &quot;-f&quot;, str(filepath), &quot;windows.info&quot;
+    ])
+    
+    if result['success'] and len(result['output'].strip().splitlines()) &gt; 4:
+        os_info['os_type'] = 'Windows'
+        os_info['details'] = result['output']
+        os_info['status'] = 'success'
+    else:
+        # Try Linux detection
+        result = run_vol_command([
+            &quot;python3&quot;, VOLATILITY_PATH, &quot;-f&quot;, str(filepath), &quot;banners.Banners&quot;
+        ])
+        
+        if result['success'] and 'Linux version' in result['output']:
+            lines = result['output'].strip().splitlines()
+            banner_lines = [l for l in lines if 'Linux version' in l]
+            os_info['os_type'] = 'Linux'
+            os_info['details'] = banner_lines[-1] if banner_lines else result['output'][:500]
+            os_info['status'] = 'success'
+        else:
+            os_info['status'] = 'error'
+            os_info['error'] = 'Unable to determine OS type'
+    
+    return json.dumps(os_info, indent=2)
+
+
+@mcp.tool()
+def available_plugins() -&gt; str:
+    &quot;&quot;&quot;List available forensic plugins&quot;&quot;&quot;
+    plugins = {
+        'windows': [
+            {'name': 'windows.pslist', 'description': 'List running processes'},
+            {'name': 'windows.cmdline', 'description': 'Display process command-line arguments'}
+        ],
+        'linux': [
+            {'name': 'linux.pslist', 'description': 'List running processes'},
+            {'name': 'linux.bash', 'description': 'Recover bash command history'}
+        ]
+    }
+    
+    return json.dumps({
+        'status': 'success',
+        'plugins': plugins
+    }, indent=2)
+
+
+@mcp.tool()
+def execute_plugin(filename: str, plugin_name: str, timeout: int = 300) -&gt; str:
+    &quot;&quot;&quot;Execute Volatility3 plugin on memory dump&quot;&quot;&quot;
+    filepath = BASE_PATH / filename
+    
+    if not filepath.exists():
+        return json.dumps({
+            'status': 'error',
+            'error': f'File not found: {filename}',
+            'available_dumps': list_memory_dumps()
+        })
+    
+    result = run_vol_command(
+        [&quot;python3&quot;, VOLATILITY_PATH, &quot;-f&quot;, str(filepath), plugin_name],
+        timeout=timeout
+    )
+    
+    return json.dumps({
+        'filename': filename,
+        'plugin': plugin_name,
+        'status': 'success' if result['success'] else 'error',
+        'output': result['output'] if result['success'] else '',
+        'error': result['error'] if not result['success'] else ''
+    }, indent=2)
+
+
+if __name__ == &quot;__main__&quot;:
+    mcp.run(transport='stdio')</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/volmcp.png" alt="Volatility MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Volatility MCP Server</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="threat-hunting">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#threat-hunting">#</doc-anchor-trigger>
+        <span>Threat Hunting</span>
+    </h3>
+</doc-anchor-target>
+<p>We know querying huge amounts of data on SIEM is often painful and can take days to get a basic idea of what&#x27;s happening. MCP can reduce those many days to a few days or even less by making the querying and analysis faster. Most SIEM vendors provide official MCP servers for integrating with AI systems. Here I will test threat hunting on a local Elasticsearch  and with the OTRF <a href="https://github.com/OTRF/Security-Datasets/tree/master/datasets/compound/apt29/day1" class="outbound" target="_blank"><span>APT29 Dataset</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. Elasticsearch already provides an MCP server: <a href="https://github.com/elastic/mcp-server-elasticsearch" class="outbound" target="_blank"><span>elastic-mcp-server</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>, so we don&#x27;t have to make one of our own, and it gets most things done.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/threathunt.png" alt="Elastic MCP" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Elastic MCP</figcaption>
+</figure>
+</p>
+<p>With the help of MCP, it was easier to hunt through the vast logs and get an overview of the dataset and what things are present. Again, AI can hallucinate and output wrong data, so we have to manually verify things to properly come to a conclusion.</p>
+<doc-anchor-target id="malware-analysis">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#malware-analysis">#</doc-anchor-trigger>
+        <span>Malware Analysis</span>
+    </h3>
+</doc-anchor-target>
+<p>Malware Analysis is the most fun part. AI can help here to quickly triage and get an overview of the sample. There are already several MCP servers available for popular disassemblers:</p>
+<ul>
+<li><a href="https://github.com/mrexodia/ida-pro-mcp" class="outbound" target="_blank"><span>ida-pro-mcp</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://github.com/clearbluejar/pyghidra-mcp" class="outbound" target="_blank"><span>pyghidra-mcp</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://github.com/LaurieWired/GhidraMCP" class="outbound" target="_blank"><span>GhidraMCP</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+<li><a href="https://github.com/radareorg/radare2-mcp" class="outbound" target="_blank"><span>radare2-mcp</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a></li>
+</ul>
+<p>I will showcase the <code translate="no" v-pre>pyghidra-mcp</code> server for the analysis of a sample obtained from MalwareBazaar. I created a custom Docker compose setup for the MCP server with streamable-http transport method selected.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash"># Dockerfile
+FROM kalilinux/kali-rolling
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update &amp;&amp; \
+    apt-get install -y ghidra python3 python3-pip &amp;&amp; \
+    rm -rf /var/lib/apt/lists/*
+ENV GHIDRA_INSTALL_DIR=/usr/share/ghidra/
+RUN pip3 install pyghidra-mcp --break-system-packages
+WORKDIR /root
+CMD [&quot;sh&quot;, &quot;-c&quot;, &quot;pyghidra-mcp -o 0.0.0.0 -t streamable-http /binaries/*&quot;]</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre translate="no" class="language-yaml"><code v-pre class="language-yaml"># docker-compose.yml
+services:
+  pyghidra-mcp:
+    build: .
+    container_name: pyghidra_mcp_server
+    ports:
+      - &quot;8000:8000&quot;
+    volumes:
+      - ./binaries:/binaries # The directory which contains the samples to analyze
+    restart: unless-stopped</code></pre>
+</doc-codeblock></div>
+<p>Now, combining this with our threat intelligence and threat hunting MCP servers would make the whole DFIR workflow much faster.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/pyghidra-mcp.png" alt="PyGhidra MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">PyGhidra MCP Server</figcaption>
+</figure>
+</p>
+<p>As tradition goes, for every new solution implemented there are new bypasses developed. Now we have anti-LLM techniques in the wild! We have evolved from anti-VM and anti-debugging to anti-LLM techniques lol. For instance, magic strings like the one mentioned in <a href="https://hackingthe.cloud/ai-llm/exploitation/claude_magic_string_denial_of_service/" class="outbound" target="_blank"><span>Breaking Claude Workflows</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> can interrupt Claude chat sessions and prevent further analysis.</p>
+<p><figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/anti-llm.png" alt="Calude Anti-LLM Magic String" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Calude Anti-LLM Magic String</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <img src="https://media.tenor.com/1NLUZ9dMsSMAAAAi/verycat-cat-eating-chips.gif" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
+<doc-anchor-target id="wrapping-up">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wrapping-up">#</doc-anchor-trigger>
+        <span>Wrapping Up</span>
+    </h2>
+</doc-anchor-target>
+<p>Its crazy to see the MCP servers in action for DFIR use cases , they are cool and reduces so many repeated tasks while giving greater details on the data.</p>
+<p>However, a few important considerations to keep in mind:</p>
+<ul>
+<li><p><strong>AI is not the final answer</strong>: Always verify AI-generated findings manually. Hallucinations and misinterpretations can lead you down the wrong path during an investigation.</p>
+</li>
+<li><p><strong>Security implications</strong>: MCP servers introduce new attack surfaces. A great blog post by jro explains the potential for <a href="https://jro.sg/ida-mcp-exec.html" class="outbound" target="_blank"><span>Code Execution in MCP Servers</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a>. Supply chain attacks are another concern, always audit MCP servers before deploying them in your environment, and stick to reputable sources.</p>
+</li>
+<li><p><strong>Isolation matters</strong>: Run your LLM and MCP stack in isolated environments (VMs or containers) to prevent accidental data exposure and contain any potential security issues.</p>
+</li>
+</ul>
+<p>That&#x27;s all for this post. I hope you enjoyed it, happy hunting!</p>
+
+                                <div id="retype-tags" class="flex items-center mt-6 mb-6 clear-both">
+                                    <span>
+                                        <a href="../../tags/">
+                                            <svg class="inline-block -mb-px mr-1.5 text-body-link hover:text-body-link-hover" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
+                                        </a>
+                                        <span class="mr-2"><a href="../../tags/artificial-intelligence/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>artificial intelligence</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../tags/malware-analysis/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>malware analysis</span>
+                                </a></span>
+                                        <span class="mr-2"><a href="../../tags/threat-intelligence/" class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-badge-info-text bg-badge-info border border-badge-info-border hover:text-badge-info-text-hover hover:bg-badge-info-hover hover:border-badge-info-border-hover transition-colors duration-200 ease-out h-6 px-2 text-xs rounded-md">
+                                    <span>threat intelligence</span>
+                                </a></span>
+                                    </span>
+                                </div>
+                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer id="retype-content-footer" class="clear-both">
+                            
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                                <span class="block mt-1">Home</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../digital-forensics/android_forensics/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                                <span class="block mt-1">Android Forensics - An Introduction</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© 2026 - <a href="https://nxb1t.is-a.dev" class="outbound" target="_blank"><span>nxb1t.is-a.dev</span><svg xmlns="http://www.w3.org/2000/svg" class="retype-outbound-trigger docs-icon ml-1" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><path d="M15.5 2.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V4.06l-6.22 6.22a.75.75 0 1 1-1.06-1.06L19.94 3h-3.69a.75.75 0 0 1-.75-.75Z"/><path d="M2.5 4.25c0-.966.784-1.75 1.75-1.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.25.25 0 0 0-.25.25v15.5c0 .138.112.25.25.25h15.5a.25.25 0 0 0 .25-.25v-8.5a.75.75 0 0 1 1.5 0v8.5a1.75 1.75 0 0 1-1.75 1.75H4.25a1.75 1.75 0 0 1-1.75-1.75V4.25Z"/></g></svg></a> - All rights reserved</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="retype-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "MCP for DFIR", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
