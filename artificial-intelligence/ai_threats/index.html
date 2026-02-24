@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.0.825264895415">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.0.825266878016">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.0.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.0.0.825264895415" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.0.0.825266878016" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.0.825264895415" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.0.825266878016" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.0.825264895415" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.0.825264895415" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.0.825266878016" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.0.825266878016" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.0.0" defer></script>
 </head>
 <body>
@@ -438,7 +438,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">-a always,exit -F arch=b64 -S open,openat -F dir=/home/ubuntu/.local/share/opencode -F key=exfil_detect
 -a always,exit -F arch=b32 -S open,openat -F dir=/home/ubuntu/.local/share/opencode -F key=exfil_detect</code></pre>
 </doc-codeblock></div>
-<p>A python script was run to zip the opencode directory and drop in the current tmp directory.</p>
+<p>A python script was run to zip the opencode directory and drop it into the tmp directory. The detection was successful, auditd successfully captured the file read operations performed by the python3 process.</p>
 <p><figure class="content-center">
     <img src="../../assets/img/ai_threats/detect-exfil.png" alt="Linux Data Exfiltration Detection" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">Linux Data Exfiltration Detection</figcaption>
@@ -457,7 +457,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
     <figcaption class="caption">macOS Data Exfiltration - Execution Detection</figcaption>
 </figure>
 </p>
-<p>However the targeted folder couldn&#x27;t be found, So I guess this is a macOS limitation.</p>
+<p>However the targeted claude folder couldn&#x27;t be found, So I guess this is a macOS limitation.</p>
 <p><figure class="content-center">
     <img src="../../assets/img/ai_threats/mac-non.png" alt="macOS Data Exfiltration - No File Access Event" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">macOS Data Exfiltration - No File Access Event</figcaption>
@@ -470,7 +470,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
         <span>Scenario 2: Agentic Attacks</span>
     </h2>
 </doc-anchor-target>
-<p>Just as defenders leverage AI for different DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing a marked increase in the use of AI to develop custom C2 (Command &amp; Control) servers, implants, and broader malware infrastructures.</p>
+<p>Just as defenders leverage AI for different DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing an increase in the use of AI to develop custom C2 (Command &amp; Control) servers, implants, and broader malware infrastructures.</p>
 <p>We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs in real-time to bypass security controls.</p>
 <p>I have categorized this section into two primary sub-scenarios:</p>
 <ol>
