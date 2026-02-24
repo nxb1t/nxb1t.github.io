@@ -27,7 +27,7 @@ Infostealers are nothing new, they are a persistent and well-established threat.
 
 In this scenario, we explore a critical question: what happens if infostealers begin targeting and exfiltrating data from AI agents? These agents may store credentials, API keys, configuration files, project data, and other sensitive information. The compromise of such data could significantly amplify the impact of a traditional infostealer infection.
 
-While writing this blog, I came across reports that threat actors have already started weaponizing stealers to exfiltrate configuration files of AI Agents. For example, a recent report in The Hacker News highlights an infostealer campaign specifically targeting [OpenClaw AI agent configuration files](https://thehackernews.com/2026/02/infostealer-steals-openclaw-ai-agent.html).
+While writing this blog, I came across a report in The Hacker News about an infostealer campaign specifically targeting [OpenClaw AI agent configuration files](https://thehackernews.com/2026/02/infostealer-steals-openclaw-ai-agent.html). They have already begun adapting to the new environment.
 
 ### AI Agents Data Source
 
@@ -172,23 +172,23 @@ Even if no proper host events are obtained, we can detect the exfiltration based
 
 ## Scenario 2: Agentic Attacks
 
-Just as defenders leverage AI for diverse DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing a marked increase in the use of AI to develop custom C2 (Command & Control) servers, implants, and broader malware infrastructures. Notably, threat actors who previously specialized in a single programming language are now using AI to rewrite malware in languages like Rust or Go to evade signature-based detection, even when the underlying intent remains the same.
+Just as defenders leverage AI for different DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing a marked increase in the use of AI to develop custom C2 (Command & Control) servers, implants, and broader malware infrastructures.
 
-We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs (Tactics, Techniques, and Procedures) in real-time to bypass security controls.
+We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs in real-time to bypass security controls.
 
-I have categorized this evolution into two primary sub-scenarios:
+I have categorized this section into two primary sub-scenarios:
 
-1. **AI Supply Chain Attacks**: Exploiting vulnerabilities in the models, frameworks, or third-party integrations (like MCP servers) that agents rely on.
+1. **AI Supply Chain Attacks**: Embedding Malicious instructions and tools inside Agent Skills and MCP servers.
 
 2. **Agent Hijacking & Abuse**: Weaponizing legitimate, locally installed agents to perform malicious activities such as lateral movement or data harvesting.
 
 ### AI Supply Chain Attacks
 
-In the early days of LLM adoption, our understanding of supply chain attacks was largely limited to poisoned models and arbitrary code execution during model loading. While these risks are still relevant, the AI infrastructure has evolved significantly, introducing powerful features like MCP ([Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)) for Function calling and [Agent Skills](https://agentskills.io/home).
+The AI infrastructure has evolved significantly, introducing powerful features like MCP ([Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)) for Function calling and [Agent Skills](https://agentskills.io/home).
 
-These new integrations have quickly become the most accessible and prominent vectors for supply chain compromise. By exploiting a malicious MCP server or a compromised "Skill" repository, a threat actor can hijack an AI agent's logic. Instead of just generating text, the agent can be manipulated to execute malicious programs, exfiltrate local files, or perform unauthorized actions on the host system.
+These new integrations have quickly become the most accessible and prominent vectors for supply chain compromise. By Embedding Malicious instructions and tools inside MCP servers and Skills, a threat actor can hijack an AI agent's logic. Instead of just generating text, the agent can be manipulated to execute malicious programs, exfiltrate local files, or perform unauthorized actions on the host system.
 
-Check out this blog by Mohamed Ghobashy on [MCP supply chain attack](https://securelist.com/model-context-protocol-for-ai-integration-abused-in-supply-chain-attacks/117473/) to see it in action.
+Check out this blog by Mohamed Ghobashy on [MCP supply chain attack](https://securelist.com/model-context-protocol-for-ai-integration-abused-in-supply-chain-attacks/117473/) to see them in action.
 
 ### Agent Hijacking & Abuse
 
@@ -222,7 +222,7 @@ Some points to be noted :-
 
 * **Do Not Ignore Low-Severity Alerts**: Seemingly low-severity alerts can often represent early reconnaissance, policy testing, or partial exploitation attempts. Treat low-severity signals as potential indicators of emerging attack chains, correlate them with other telemetry, and investigate patterns over time rather than dismissing them in isolation.
 
-* **Monitor Agent Activity and File Integrity**: Proactively monitor the file paths and directories used by AI agents. It is essential to detect if unauthorized or malicious programs are accessing agent configurations, memory logs, or integration settings. Also look for keychain and other sensitive information access.
+* **Monitor Agent Activity and File Integrity**: Proactively monitor the file paths and directories used by AI agents. It is essential to detect if unauthorized or malicious programs are accessing agent configurations, memory logs, or integration settings.
 
 * **Audit the AI Supply Chain**: Supply chain attacks in the AI ecosystem are real. Just as we audit npm or Python packages for malicious code, it is now crucial to perform security audits on MCP servers and Agent Skills. Enforce strict governance and allowlisting policies to prevent supply chain compromise.
 
