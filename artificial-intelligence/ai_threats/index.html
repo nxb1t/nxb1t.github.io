@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.0.825262650848">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.0.825264895415">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.0.0">
@@ -33,12 +33,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.0.0.825262650848" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.0.0.825264895415" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.0.825262650848" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.0.825264895415" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.0.825262650848" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.0.825262650848" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.0.825264895415" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.0.825264895415" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.0.0" defer></script>
 </head>
 <body>
@@ -240,7 +240,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 </doc-anchor-target>
 <p>Infostealers are nothing new, they are a persistent and well-established threat. Over the years, numerous threat research reports have shown that this threat is not going away anytime soon. Threat actors continue to refine their delivery techniques, using methods such as ClickFix-style social engineering to distribute stealer malware. So far the traditional infostealers targeted mostly browser cookies, saved passwords, crypto wallets and other sensitive information.</p>
 <p>In this scenario, we explore a critical question: what happens if infostealers begin targeting and exfiltrating data from AI agents? These agents may store credentials, API keys, configuration files, project data, and other sensitive information. The compromise of such data could significantly amplify the impact of a traditional infostealer infection.</p>
-<p>While writing this blog, I came across reports that threat actors have already started weaponizing stealers to exfiltrate configuration files of AI Agents. For example, a recent report in The Hacker News highlights an infostealer campaign specifically targeting <a href="https://thehackernews.com/2026/02/infostealer-steals-openclaw-ai-agent.html">OpenClaw AI agent configuration files</a>.</p>
+<p>While writing this blog, I came across a report in The Hacker News about an infostealer campaign specifically targeting <a href="https://thehackernews.com/2026/02/infostealer-steals-openclaw-ai-agent.html">OpenClaw AI agent configuration files</a>. They have already begun adapting to the new environment.</p>
 <doc-anchor-target id="ai-agents-data-source">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ai-agents-data-source">#</doc-anchor-trigger>
@@ -470,11 +470,11 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
         <span>Scenario 2: Agentic Attacks</span>
     </h2>
 </doc-anchor-target>
-<p>Just as defenders leverage AI for diverse DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing a marked increase in the use of AI to develop custom C2 (Command &amp; Control) servers, implants, and broader malware infrastructures. Notably, threat actors who previously specialized in a single programming language are now using AI to rewrite malware in languages like Rust or Go to evade signature-based detection, even when the underlying intent remains the same.</p>
-<p>We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs (Tactics, Techniques, and Procedures) in real-time to bypass security controls.</p>
-<p>I have categorized this evolution into two primary sub-scenarios:</p>
+<p>Just as defenders leverage AI for different DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing a marked increase in the use of AI to develop custom C2 (Command &amp; Control) servers, implants, and broader malware infrastructures.</p>
+<p>We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs in real-time to bypass security controls.</p>
+<p>I have categorized this section into two primary sub-scenarios:</p>
 <ol>
-<li><p><strong>AI Supply Chain Attacks</strong>: Exploiting vulnerabilities in the models, frameworks, or third-party integrations (like MCP servers) that agents rely on.</p>
+<li><p><strong>AI Supply Chain Attacks</strong>: Embedding Malicious instructions and tools inside Agent Skills and MCP servers.</p>
 </li>
 <li><p><strong>Agent Hijacking &amp; Abuse</strong>: Weaponizing legitimate, locally installed agents to perform malicious activities such as lateral movement or data harvesting.</p>
 </li>
@@ -485,9 +485,9 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
         <span>AI Supply Chain Attacks</span>
     </h3>
 </doc-anchor-target>
-<p>In the early days of LLM adoption, our understanding of supply chain attacks was largely limited to poisoned models and arbitrary code execution during model loading. While these risks are still relevant, the AI infrastructure has evolved significantly, introducing powerful features like MCP (<a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol</a>) for Function calling and <a href="https://agentskills.io/home">Agent Skills</a>.</p>
-<p>These new integrations have quickly become the most accessible and prominent vectors for supply chain compromise. By exploiting a malicious MCP server or a compromised &quot;Skill&quot; repository, a threat actor can hijack an AI agent&#x27;s logic. Instead of just generating text, the agent can be manipulated to execute malicious programs, exfiltrate local files, or perform unauthorized actions on the host system.</p>
-<p>Check out this blog by Mohamed Ghobashy on <a href="https://securelist.com/model-context-protocol-for-ai-integration-abused-in-supply-chain-attacks/117473/">MCP supply chain attack</a> to see it in action.</p>
+<p>The AI infrastructure has evolved significantly, introducing powerful features like MCP (<a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol</a>) for Function calling and <a href="https://agentskills.io/home">Agent Skills</a>.</p>
+<p>These new integrations have quickly become the most accessible and prominent vectors for supply chain compromise. By Embedding Malicious instructions and tools inside MCP servers and Skills, a threat actor can hijack an AI agent&#x27;s logic. Instead of just generating text, the agent can be manipulated to execute malicious programs, exfiltrate local files, or perform unauthorized actions on the host system.</p>
+<p>Check out this blog by Mohamed Ghobashy on <a href="https://securelist.com/model-context-protocol-for-ai-integration-abused-in-supply-chain-attacks/117473/">MCP supply chain attack</a> to see them in action.</p>
 <doc-anchor-target id="agent-hijacking--abuse">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#agent-hijacking--abuse">#</doc-anchor-trigger>
@@ -507,7 +507,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
     B --&gt;|&quot;Utilizing AI Agents for Malicious Activities&quot;| C
     C --&gt;|&quot;Moving Laterally Across Network&quot;| D
     C --&gt;|&quot;Data Exfiltration&quot;| E</pre></div>
-<p>What if attackers abuse locally installed AI agents for lateral movement and other operations, without relying on API keys or bundled models?. Well, I plan to showcase this in my next post, where I will conduct a full adversary simulation and threat hunting exercise. Stay tuned!</p>
+<p>What if attackers abuse locally installed AI agents and use them as <code translate="no" v-pre>LOLBins</code> for lateral movement and other operations, without relying on API keys or bundled models?. Well, I plan to showcase this in my next post, where I will conduct a full adversary simulation and threat hunting exercise. Stay tuned!</p>
 <doc-anchor-target id="conclusion">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
@@ -521,7 +521,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 </li>
 <li><p><strong>Do Not Ignore Low-Severity Alerts</strong>: Seemingly low-severity alerts can often represent early reconnaissance, policy testing, or partial exploitation attempts. Treat low-severity signals as potential indicators of emerging attack chains, correlate them with other telemetry, and investigate patterns over time rather than dismissing them in isolation.</p>
 </li>
-<li><p><strong>Monitor Agent Activity and File Integrity</strong>: Proactively monitor the file paths and directories used by AI agents. It is essential to detect if unauthorized or malicious programs are accessing agent configurations, memory logs, or integration settings. Also look for keychain and other sensitive information access.</p>
+<li><p><strong>Monitor Agent Activity and File Integrity</strong>: Proactively monitor the file paths and directories used by AI agents. It is essential to detect if unauthorized or malicious programs are accessing agent configurations, memory logs, or integration settings.</p>
 </li>
 <li><p><strong>Audit the AI Supply Chain</strong>: Supply chain attacks in the AI ecosystem are real. Just as we audit npm or Python packages for malicious code, it is now crucial to perform security audits on MCP servers and Agent Skills. Enforce strict governance and allowlisting policies to prevent supply chain compromise.</p>
 </li>
