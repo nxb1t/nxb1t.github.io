@@ -45,7 +45,7 @@ flowchart TB
     C -- "Exfiltrating the data" --> D
 ```
 
-Understanding where AI agents store data locally is critical to detect this type of attack and its impact. Below, we examine several popular AI agent tools and highlight where sensitive artifacts are stored.  All the AI agents in this demonstration are running with default configurations, which reflects how most users typically operate them.
+Understanding where AI agents store data locally is critical to detect this type of attack and its impact. Below, we examine several popular AI agent tools and highlight where sensitive artifacts are stored, this data is useful during Digital Forensic Investigations as well.  All the AI agents in this demonstration are running with default configurations, which reflects how most users typically operate them.
 
 !!! Note
 In the examples below, I use prompts that include fake API keys and other hardcoded test data. Modern AI models have significantly evolved and will usually warn users if they detect exposed API keys, often recommending key rotation. Therefore, the likelihood of valid, active API keys being present in conversational history may be lower. However, other forms of sensitive and critical information may still reside in these stored artifacts.
