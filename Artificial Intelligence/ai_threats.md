@@ -210,7 +210,7 @@ flowchart TD
     C -->|"Data Exfiltration"| E
 ```
 
-What if attackers abuse locally installed AI agents for lateral movement and other operations, without relying on API keys or bundled models?. Well, I plan to showcase this in my next post, where I will conduct a full adversary simulation and threat hunting exercise. Stay tuned!
+What if attackers abuse locally installed AI agents and use them as `LOLBins` for lateral movement and other operations, without relying on API keys or bundled models?. Well, I plan to showcase this in my next post, where I will conduct a full adversary simulation and threat hunting exercise. Stay tuned!
 
 ## Conclusion
 
