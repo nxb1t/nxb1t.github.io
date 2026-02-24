@@ -150,7 +150,7 @@ Here is a simple auditd rule to detect OpenCode data exfiltration :-
 -a always,exit -F arch=b32 -S open,openat -F dir=/home/ubuntu/.local/share/opencode -F key=exfil_detect
 ```
 
-A python script was run to zip the opencode directory and drop in the current tmp directory.
+A python script was run to zip the opencode directory and drop it into the tmp directory. The detection was successful, auditd successfully captured the file read operations performed by the python3 process.
 
 ![Linux Data Exfiltration Detection](/assets/img/ai_threats/detect-exfil.png)
 
@@ -164,7 +164,7 @@ The python execution and zip creation is visible in the EDR event stream.
 
 ![macOS Data Exfiltration - Execution Detection](/assets/img/ai_threats/mac-exec.png)
 
-However the targeted folder couldn't be found, So I guess this is a macOS limitation.
+However the targeted claude folder couldn't be found, So I guess this is a macOS limitation.
 
 ![macOS Data Exfiltration - No File Access Event](/assets/img/ai_threats/mac-non.png)
 
@@ -172,7 +172,7 @@ Even if no proper host events are obtained, we can detect the exfiltration based
 
 ## Scenario 2: Agentic Attacks
 
-Just as defenders leverage AI for different DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing a marked increase in the use of AI to develop custom C2 (Command & Control) servers, implants, and broader malware infrastructures.
+Just as defenders leverage AI for different DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing an increase in the use of AI to develop custom C2 (Command & Control) servers, implants, and broader malware infrastructures.
 
 We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs in real-time to bypass security controls.
 
