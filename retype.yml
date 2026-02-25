@@ -33,5 +33,5 @@ snippets:
     - yml
 
 integrations:
-  googleTagManager:
+  googleAnalytics:
     id: "G-6E5Q6YSW8D"
