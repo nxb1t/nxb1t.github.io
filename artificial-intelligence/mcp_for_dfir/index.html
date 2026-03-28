@@ -7,11 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825358374480">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.827994379111">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.0.1">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>MCP for DFIR</title>
@@ -19,29 +18,37 @@
     <meta name="description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://nxb1t.github.io/retype/artificial-intelligence/mcp_for_dfir/">
+    <link rel="canonical" href="https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nxb1t.github.io/retype/artificial-intelligence/mcp_for_dfir/">
+    <meta property="og:url" content="https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir/">
     <meta property="og:title" content="MCP for DFIR">
     <meta property="og:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more.">
-    <meta property="og:image" content="https://nxb1t.github.io/retype/assets/img/mcp_for_dfir/mcp_cover.png">
+    <meta property="og:image" content="https://nxb1t.github.io/assets/img/mcp_for_dfir/mcp_cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="MCP for DFIR">
     <meta property="og:site_name" content="nxb1t">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir/">
+    <meta name="twitter:title" content="MCP for DFIR">
+    <meta name="twitter:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more.">
+    <meta name="twitter:image" content="https://nxb1t.github.io/assets/img/mcp_for_dfir/mcp_cover.png">
+    <meta name="twitter:image:alt" content="MCP for DFIR">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.0.1.825358374480" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.827994379111" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.1.825358374480" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.1.825358374480" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.1.825358374480" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.827994379111" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -56,7 +63,7 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                    <a id="retype-branding-logo" href="https://nxb1t.github.io/" class="flex items-center leading-snug text-2xl">
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">nxb1t</span>
                     </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">is-a.dev</span>
                 </div>
@@ -69,21 +76,25 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://x.com/nxb1t4n6" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
+                                </svg>
+                                <span>Twitter</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/nxb1t" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                    <g fill="currentColor">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                    </g>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.linkedin.com/in/nashid-p-694842226" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                    <g fill="currentColor">
-                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                    </g>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                 </svg>
                                 <span>LinkedIn</span>
                             </a>
@@ -138,21 +149,25 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://x.com/nxb1t4n6" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
+                                        </svg>
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/nxb1t" target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                            <g fill="currentColor">
-                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                            </g>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                         </svg>
                                         <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.linkedin.com/in/nashid-p-694842226" target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                            <g fill="currentColor">
-                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                            </g>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                         </svg>
                                         <span>LinkedIn</span>
                                     </a>
@@ -179,12 +194,7 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="mcp-for-dfir" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mcp-for-dfir">#</doc-anchor-trigger>
-        <span>MCP for DFIR</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="mcp-for-dfir">MCP for DFIR</h1>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
     <div class="flex items-center">
         <div>By</div>
@@ -204,20 +214,14 @@
     <div class="flex items-center shrink-0">Published&nbsp;<span>2026-02-12</span></div>
 </div>
 
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/mcp_cover.png" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/mcp_cover.png" alt="" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1536" height="1024" />
     <figcaption class="caption"></figcaption>
 </figure>
-</p>
 <p>Hello Everyone,<br>
 I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more. This got me thinking about applying it to DFIR use cases, like Digital Forensics and Malware Analysis.
 While there are already many MCP servers available for DFIR, I wanted to build some on my own to better understand the architecture, as well as explore some readily available servers from reputable sources. So In this post, I will cover setting up a local LLM and building some simple MCP servers specifically for DFIR.</p>
-<doc-anchor-target id="a-brief-intro-on-llm-and-mcp">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#a-brief-intro-on-llm-and-mcp">#</doc-anchor-trigger>
-        <span>A Brief Intro on LLM and MCP</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="a-brief-intro-on-llm-and-mcp">A Brief Intro on LLM and MCP</h2>
 <p>An LLM, or Large Language Model, is a type of AI model trained on vast amounts of data to understand, generate, and process human-like language. There are a few key terms to know when dealing with LLM models:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -244,40 +248,28 @@ While there are already many MCP servers available for DFIR, I wanted to build s
 </table>
 </div>
 <p>The <a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol (MCP)</a> is an open standard that allows an AI model to connect with and use external tools, data sources, and APIs. The protocol is designed to provide the AI with context and the ability to act on that information. With the help of MCP, it is possible to perform many tasks using natural language, making analysis and research much easier.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/diagram.png" alt="MCP Architecture Diagram" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/diagram.png" alt="MCP Architecture Diagram" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1660" height="1284" />
     <figcaption class="caption">MCP Architecture Diagram</figcaption>
 </figure>
-</p>
 <p>Here is a generic example: we ask the model to get the current weather for a city. Our LLM client first checks if any MCP servers are set up. If they are, it asks the MCP server for available tools and sends the city name as a parameter to the compatible tool. The tool then calls a weather provider’s API to get the current data. It returns the result in a format the AI model can understand, and the model then responds based on that data.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/mcpweather.png" alt="Weather MCP" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/mcpweather.png" alt="Weather MCP" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2364" height="678" />
     <figcaption class="caption">Weather MCP</figcaption>
 </figure>
-</p>
 <hr>
-<doc-anchor-target id="why-local-llm">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-local-llm">#</doc-anchor-trigger>
-        <span>Why Local LLM</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="why-local-llm">Why Local LLM</h2>
 <p><em>Why use a local LLM when popular chatbots like ChatGPT, Claude, and Gemini exist?</em> <br> In most real-world cases, there is a significant amount of confidential data to be analyzed that cannot be casually uploaded to cloud-based chatbots. To keep data secure, it is best to utilize locally hosted LLMs.</p>
 <p>An ideal architecture would involve serving LLMs and MCP tools on a virtual machine or inside a Docker container with security controls in-place. This ensures isolation from the host and prevents accidental data exposure, keeping the entire analysis stack in a sandboxed environment.</p>
 <hr>
-<doc-anchor-target id="local-llm-setup">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#local-llm-setup">#</doc-anchor-trigger>
-        <span>Local LLM Setup</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="local-llm-setup">Local LLM Setup</h2>
 <p>To run a local LLM, there are two popular options: <a href="https://ollama.com/download/">Ollama</a> and <a href="http://lmstudio.ai">LM Studio</a>. Both are user-friendly. LM Studio offers a graphical user interface (GUI), which makes it simple to adjust model settings and parameters, while Ollama is lightweight and well-suited for running in headless mode. It also provides a GUI. However, it is not as advanced as LM Studio.
 Currently, LM Studio performs best on macOS because it leverages Apple’s native MLX libraries. On Windows and Linux, both LM Studio and Ollama offer comparable performance. For this blog, I will primarily be using LM Studio.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -291,81 +283,56 @@ Currently, LM Studio performs best on macOS because it leverages Apple’s nativ
         </div>
     </div>
 </div>
-<doc-anchor-target id="installing-llm-model">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-llm-model">#</doc-anchor-trigger>
-        <span>Installing LLM Model</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="installing-llm-model">Installing LLM Model</h3>
 <p><strong>LM Studio</strong></p>
 <p>Installing models in LM Studio is straightforward: just click the Models Search button to open the search dialog and install any model you like. For this blog, I am using the <strong>Qwen3 4B 2507</strong> model, which performed well compared to other models with similar parameter weights.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/lmstudio-discover.png" alt="LM Studio - Discover Models" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/lmstudio-discover.png" alt="LM Studio - Discover Models" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2624" height="1744" />
     <figcaption class="caption">LM Studio - Discover Models</figcaption>
 </figure>
-</p>
 <p><strong>Ollama</strong></p>
 <p>The default Qwen 3 4B 2507 Instruct model doesn&#x27;t support the GGUF format required by Ollama, so I used the <a href="https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF">Qwen3-4B-Instruct-2507-GGUF</a> model by unsloth.ai from Hugging Face. We can download the model using the following command:</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="installing-llm-model-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">ollama pull hf.co/unsloth/Qwen3-4B-Instruct-2507-GGUF</code></pre>
 </doc-codeblock></div>
 <p>The <code translate="no" v-pre>hf.co/unsloth/Qwen3-4B-Instruct-2507-GGUF</code> model uses 4.1 GB of VRAM while running with an 8192 context length. You can adjust the context length depending on your specific needs by referring <a href="https://docs.ollama.com/context-length">ollama docs</a>.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/ollama-ram.png" alt="Ollama resource usage" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/ollama-ram.png" alt="Ollama resource usage" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2074" height="146" />
     <figcaption class="caption">Ollama resource usage</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="openwebui">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openwebui">#</doc-anchor-trigger>
-        <span>OpenWebUI</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="openwebui">OpenWebUI</h4>
 <p>Many open-source chat interfaces, such as AnythingLLM and LibreChat, are available for Ollama. However, I chose <a href="https://openwebui.com">OpenWebUI</a> because it offers a clean, ChatGPT-like interface and an easy installation process.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="openwebui-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash"># This will start openwebui on port 8080
 docker run -d --network=host -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:slim</code></pre>
 </doc-codeblock></div>
 <p>In the Ollama API section inside <strong>Admin Panel --&gt; Settings</strong>, specify the <code translate="no" v-pre>http://127.0.0.1:11434</code> endpoint. If your Ollama instance is on a separate server, use that IP instead of localhost. You can also specify other OpenAI API-compatible servers, such as the LM Studio server.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/openwebui-settings.png" alt="LLM API Settings" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/openwebui-settings.png" alt="LLM API Settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2366" height="724" />
     <figcaption class="caption">LLM API Settings</figcaption>
 </figure>
-</p>
 <p>That&#x27;s it! We have a working, ChatGPT-like local LLM ready.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/openwebui.png" alt="OpenWebUI - Interface" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/openwebui.png" alt="OpenWebUI - Interface" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="3132" height="2028" />
     <figcaption class="caption">OpenWebUI - Interface</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="ollmcp">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ollmcp">#</doc-anchor-trigger>
-        <span>ollmcp</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="ollmcp">ollmcp</h4>
 <p>If you want MCP tool support without a resource-intensive GUI, <a href="https://github.com/jonigl/mcp-client-for-ollama">ollmcp</a> is an excellent choice. It is a Terminal User Interface (TUI) app with built-in MCP support.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="ollmcp-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pip3 install ollmcp</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/ollmcp-3.png" alt="ollmcp - Interface" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/ollmcp-3.png" alt="ollmcp - Interface" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1996" height="1550" />
     <figcaption class="caption">ollmcp - Interface</figcaption>
 </figure>
-</p>
 <hr>
-<doc-anchor-target id="mcp-server-structure">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mcp-server-structure">#</doc-anchor-trigger>
-        <span>MCP Server Structure</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="mcp-server-structure">MCP Server Structure</h2>
 <p>Now, let&#x27;s look at the MCP servers that we can integrate with our local LLM setup. MCP servers can be created in various languages, including C, JavaScript, and Python. For simplicity, I will use Python and the <code translate="no" v-pre>fastmcp</code> library.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="mcp-server-structure-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pip3 install fastmcp</code></pre>
 </doc-codeblock></div>
 <p>Below is a simple MCP server that returns &quot;Hello World.&quot; We begin by importing the FastMCP library. Next, we initialize FastMCP to name our server. We use the <code translate="no" v-pre>@mcp.tool()</code> decorator to make the function MCP-compliant. The rest of the code is structured similarly to a typical Flask API endpoint. We also include a docstring within the function to describe the tool&#x27;s purpose, which serves as metadata for the LLM.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="mcp-server-structure-code-2" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-python" data-line="5,16,7-11"><code v-pre class="language-python">from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(&quot;HelloMCP&quot;)
@@ -404,37 +371,21 @@ if __name__ == &quot;__main__&quot;:
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="configuring-mcp-server">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-mcp-server">#</doc-anchor-trigger>
-        <span>Configuring MCP Server</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="configuring-mcp-server">Configuring MCP Server</h3>
 <p>Here is how to configure an MCP server for different open-source LLM clients.</p>
-<doc-anchor-target id="openwebui-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openwebui-1">#</doc-anchor-trigger>
-        <span>OpenWebUI</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="openwebui-1">OpenWebUI</h4>
 <p>OpenWebUI requires OpenAPI-standard MCP servers, it does not support <code translate="no" v-pre>stdio</code> or standard streamable HTTP servers directly. We can use the <code translate="no" v-pre>mcpo</code> Python package to convert any <code translate="no" v-pre>stdio</code> MCP server to the OpenAPI standard.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="openwebui-1-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pip3 install mcpo
 mcpo -- python3 your-mcp-server.py # This will run openapi standard MCP server on http://0.0.0.0:8000/</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/openwebui-mcp-config.png" alt="OpenWebUI - MCP Config" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/openwebui-mcp-config.png" alt="OpenWebUI - MCP Config" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2610" height="706" />
     <figcaption class="caption">OpenWebUI - MCP Config</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="lm-studio-and-ollmcp">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lm-studio-and-ollmcp">#</doc-anchor-trigger>
-        <span>LM Studio and ollmcp</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="lm-studio-and-ollmcp">LM Studio and ollmcp</h4>
 <p>For both ollmcp and LM Studio, MCP configuration files are stored in JSON format. LM Studio configurations are located at <code translate="no" v-pre>$HOME/.lmstudio/mcp.json</code>, while for <code translate="no" v-pre>ollmcp</code>, you can pass the configuration file path as an argument.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="lm-studio-and-ollmcp-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">ollmcp --servers-json ./servers.json --model hf.co/unsloth/Qwen3-4B-Instruct-2507-GGUF:Q4_K_M</code></pre>
 </doc-codeblock></div>
 <p>Example MCP configuration file for both ollmcp and LM Studio:</p>
@@ -468,19 +419,9 @@ mcpo -- python3 your-mcp-server.py # This will run openapi standard MCP server o
 </doc-tab>
 </doc-tabs>
 <hr>
-<doc-anchor-target id="practical-use-cases">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#practical-use-cases">#</doc-anchor-trigger>
-        <span>Practical Use Cases</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="practical-use-cases">Practical Use Cases</h2>
 <p>Let’s look at some practical applications of MCP servers in threat intelligence, threat hunting, digital forensics, and malware analysis.</p>
-<doc-anchor-target id="threat-intelligence">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#threat-intelligence">#</doc-anchor-trigger>
-        <span>Threat Intelligence</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="threat-intelligence">Threat Intelligence</h3>
 <p>During investigations, we may find multiple IOCs, which could be IPs, domains, URLs, or file hashes. Most of the time, this involves manual searching on threat intel platforms. However, by building an MCP server around these platforms, we can get better contextual data and even capture the minute details that may be missed during manual searching. Here, I have created a simple MCP server to check IP reputation using AbuseIPDB. This is just a foundational example.</p>
 <doc-panel id="code" collapsed>
     <template #title>Code</template>
@@ -526,25 +467,18 @@ if __name__ == &quot;__main__&quot;:
     mcp.run(transport='stdio')</code></pre>
 </doc-codeblock></div>
 </doc-panel>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/threatmcp.png" alt="Threat Intelligence MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/threatmcp.png" alt="Threat Intelligence MCP Server" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="3132" height="2028" />
     <figcaption class="caption">Threat Intelligence MCP Server</figcaption>
 </figure>
-</p>
 <p>You can add other services like ThreatFox, MalwareBazaar, URLhaus, and VirusTotal to turn this into a comprehensive threat intelligence MCP server. Here is an example of checking an IOC found in the recent <a href="https://www.huntress.com/blog/active-exploitation-solarwinds-web-help-desk-cve-2025-26399">SolarWinds WHD Exploitation blog by Huntress</a> with all the above mentioned features included:</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/threatmcp-git.png" alt="Advanced Threat Intelligence MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/threatmcp-git.png" alt="Advanced Threat Intelligence MCP Server" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="3132" height="2028" />
     <figcaption class="caption">Advanced Threat Intelligence MCP Server</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="digital-forensics">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#digital-forensics">#</doc-anchor-trigger>
-        <span>Digital Forensics</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="digital-forensics">Digital Forensics</h3>
 <p>In Digital Forensics, I will take Memory Forensics as an example. To make Memory Forensics a little easier, I created a simple Volatility3 MCP Server. Here is a Linux Memory Forensics <a href="https://www.iblue.team/ctf-challenges/13cubed-linux-memory-forensics">challenge</a> from the iBlueTeam site being solved using this MCP server. Similarly, you can create MCP servers for Sleuthkit and other forensics tools to improve analysis speed. False positives may occur, so it remains the analyst&#x27;s duty to verify and filter the results.</p>
-<doc-panel id="code" collapsed>
+<doc-panel id="code-1" collapsed>
     <template #title>Code</template>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-python"><code v-pre class="language-python">from mcp.server.fastmcp import FastMCP
@@ -701,30 +635,18 @@ if __name__ == &quot;__main__&quot;:
     mcp.run(transport='stdio')</code></pre>
 </doc-codeblock></div>
 </doc-panel>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/volmcp.png" alt="Volatility MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/volmcp.png" alt="Volatility MCP Server" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2554" height="1886" />
     <figcaption class="caption">Volatility MCP Server</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="threat-hunting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#threat-hunting">#</doc-anchor-trigger>
-        <span>Threat Hunting</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="threat-hunting">Threat Hunting</h3>
 <p>We know querying huge amounts of data on SIEM is often painful and can take days to get a basic idea of what&#x27;s happening. MCP can reduce those many days to a few days or even less by making the querying and analysis faster. Most SIEM vendors provide official MCP servers for integrating with AI systems. Here I will test threat hunting on a local Elasticsearch  and with the OTRF <a href="https://github.com/OTRF/Security-Datasets/tree/master/datasets/compound/apt29/day1">APT29 Dataset</a>. Elasticsearch already provides an MCP server: <a href="https://github.com/elastic/mcp-server-elasticsearch">elastic-mcp-server</a>, so we don&#x27;t have to make one of our own, and it gets most things done.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/threathunt.png" alt="Elastic MCP" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/threathunt.png" alt="Elastic MCP" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="3132" height="2028" />
     <figcaption class="caption">Elastic MCP</figcaption>
 </figure>
-</p>
 <p>With the help of MCP, it was easier to hunt through the vast logs and get an overview of the dataset and what things are present. Again, AI can hallucinate and output wrong data, so we have to manually verify things to properly come to a conclusion.</p>
-<doc-anchor-target id="malware-analysis">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#malware-analysis">#</doc-anchor-trigger>
-        <span>Malware Analysis</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="malware-analysis">Malware Analysis</h3>
 <p>Malware Analysis is the most fun part. AI can help here to quickly triage and get an overview of the sample. There are already several MCP servers available for popular disassemblers:</p>
 <ul>
 <li><a href="https://github.com/mrexodia/ida-pro-mcp">ida-pro-mcp</a></li>
@@ -733,7 +655,7 @@ if __name__ == &quot;__main__&quot;:
 <li><a href="https://github.com/radareorg/radare2-mcp">radare2-mcp</a></li>
 </ul>
 <p>I will showcase the <code translate="no" v-pre>pyghidra-mcp</code> server for the analysis of a sample obtained from MalwareBazaar. I created a custom Docker compose setup for the MCP server with streamable-http transport method selected.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="malware-analysis-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash"># Dockerfile
 FROM kalilinux/kali-rolling
 ENV DEBIAN_FRONTEND=noninteractive
@@ -745,7 +667,7 @@ RUN pip3 install pyghidra-mcp --break-system-packages
 WORKDIR /root
 CMD [&quot;sh&quot;, &quot;-c&quot;, &quot;pyghidra-mcp -o 0.0.0.0 -t streamable-http /binaries/*&quot;]</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="malware-analysis-code-2" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml"># docker-compose.yml
 services:
   pyghidra-mcp:
@@ -758,28 +680,20 @@ services:
     restart: unless-stopped</code></pre>
 </doc-codeblock></div>
 <p>Now, combining this with our threat intelligence and threat hunting MCP servers would make the whole DFIR workflow much faster.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/pyghidra-mcp.png" alt="PyGhidra MCP Server" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/pyghidra-mcp.png" alt="PyGhidra MCP Server" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2624" height="1744" />
     <figcaption class="caption">PyGhidra MCP Server</figcaption>
 </figure>
-</p>
 <p>As tradition goes, for every new solution implemented there are new bypasses developed. Now we have anti-LLM techniques in the wild! We have evolved from anti-VM and anti-debugging to anti-LLM techniques lol. For instance, magic strings like the one mentioned in <a href="https://hackingthe.cloud/ai-llm/exploitation/claude_magic_string_denial_of_service/">Breaking Claude Workflows</a> can interrupt Claude chat sessions and prevent further analysis.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/mcp_for_dfir/anti-llm.png" alt="Calude Anti-LLM Magic String" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/mcp_for_dfir/anti-llm.png" alt="Calude Anti-LLM Magic String" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2256" height="1636" />
     <figcaption class="caption">Calude Anti-LLM Magic String</figcaption>
 </figure>
-</p>
-<p><figure class="content-center">
-    <img src="https://media.tenor.com/1NLUZ9dMsSMAAAAi/verycat-cat-eating-chips.gif" alt="" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="https://media.tenor.com/1NLUZ9dMsSMAAAAi/verycat-cat-eating-chips.gif" alt="" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption"></figcaption>
 </figure>
-</p>
-<doc-anchor-target id="wrapping-up">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#wrapping-up">#</doc-anchor-trigger>
-        <span>Wrapping Up</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="wrapping-up">Wrapping Up</h2>
 <p>Its crazy to see the MCP servers in action for DFIR use cases , they are cool and reduces so many repeated tasks while giving greater details on the data.</p>
 <p>However, a few important considerations to keep in mind:</p>
 <ul>
@@ -792,7 +706,7 @@ services:
 </ul>
 <p>That&#x27;s all for this post. I hope you enjoyed it, happy hunting!</p>
 
-                <div id="retype-tags" class="flex items-center mt-6 mb-6 clear-both">
+                <div id="retype-tags" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mt-6 mb-6 clear-both">
                     <span>
                         <a href="../../tags/">
                             <svg class="inline-block -mb-px mr-1.5 text-body-link hover:text-body-link-hover" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
@@ -807,6 +721,7 @@ services:
                     <span>threat intelligence</span>
                 </a></span>
                     </span>
+                
                 </div>
 
                 <!-- Required only on API pages -->

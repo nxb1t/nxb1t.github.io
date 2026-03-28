@@ -7,11 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-root" content="/retype">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.1.825358374480">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.827994379111">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.0.1">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>AI Agents as Attack Vectors</title>
@@ -19,30 +18,38 @@
     <meta name="description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://nxb1t.github.io/retype/artificial-intelligence/ai_threats/">
+    <link rel="canonical" href="https://nxb1t.github.io/artificial-intelligence/ai_threats/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nxb1t.github.io/retype/artificial-intelligence/ai_threats/">
+    <meta property="og:url" content="https://nxb1t.github.io/artificial-intelligence/ai_threats/">
     <meta property="og:title" content="AI Agents as Attack Vectors">
     <meta property="og:description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am">
-    <meta property="og:image" content="https://nxb1t.github.io/retype/assets/img/ai_threats/antigravity.png">
+    <meta property="og:image" content="https://nxb1t.github.io/assets/img/ai_threats/antigravity.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="AI Agents as Attack Vectors">
     <meta property="og:site_name" content="nxb1t">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nxb1t.github.io/artificial-intelligence/ai_threats/">
+    <meta name="twitter:title" content="AI Agents as Attack Vectors">
+    <meta name="twitter:description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am">
+    <meta name="twitter:image" content="https://nxb1t.github.io/assets/img/ai_threats/antigravity.png">
+    <meta name="twitter:image:alt" content="AI Agents as Attack Vectors">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.0.1.825358374480" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.827994379111" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.1.825358374480" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.1.825358374480" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.1.825358374480" defer></script>
-    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.0.1" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.827994379111" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.4.0" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -57,7 +64,7 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                    <a id="retype-branding-logo" href="https://nxb1t.github.io/" class="flex items-center leading-snug text-2xl">
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">nxb1t</span>
                     </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">is-a.dev</span>
                 </div>
@@ -70,21 +77,25 @@
                 <nav id="retype-header-nav" class="hidden md:flex">
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://x.com/nxb1t4n6" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
+                                </svg>
+                                <span>Twitter</span>
+                            </a>
+                        </li>
+                        <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/nxb1t" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                    <g fill="currentColor">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                    </g>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 <span>GitHub</span>
                             </a>
                         </li>
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.linkedin.com/in/nashid-p-694842226" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                    <g fill="currentColor">
-                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                    </g>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                 </svg>
                                 <span>LinkedIn</span>
                             </a>
@@ -139,21 +150,25 @@
                         <nav>
                             <ul class="flex flex-wrap justify-center items-center">
                                 <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://x.com/nxb1t4n6" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
+                                        </svg>
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                                <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/nxb1t" target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                            <g fill="currentColor">
-                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                            </g>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                         </svg>
                                         <span>GitHub</span>
                                     </a>
                                 </li>
                                 <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://www.linkedin.com/in/nashid-p-694842226" target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
-                                            <g fill="currentColor">
-                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                            </g>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                         </svg>
                                         <span>LinkedIn</span>
                                     </a>
@@ -180,12 +195,7 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="ai-agents-as-attack-vectors" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-agents-as-attack-vectors">#</doc-anchor-trigger>
-        <span>AI Agents as Attack Vectors</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="ai-agents-as-attack-vectors">AI Agents as Attack Vectors</h1>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
     <div class="flex items-center">
         <div>By</div>
@@ -208,28 +218,13 @@
 <p>Hello everyone,<br>
 In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_dfir/">post</a>, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am looking into a different perspective: the potential abuse of AI agents by threat actors and the impact they could have on an enterprise environment.</p>
 <p>We are already seeing the growing popularity of AI coding agents such as Claude Code and other general-purpose AI agents like <a href="https://github.com/openclaw/openclaw">OpenClaw</a> (previously known as Moltbot/Clawdbot). These agents often have access to significant amounts of sensitive information, including source code, project data, and other critical components that users work on. This makes them highly valuable targets for threat actors.</p>
-<doc-anchor-target id="how-threat-actors-can-leverage-ai-agents">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-threat-actors-can-leverage-ai-agents">#</doc-anchor-trigger>
-        <span>How Threat Actors Can Leverage AI Agents</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-threat-actors-can-leverage-ai-agents">How Threat Actors Can Leverage AI Agents</h2>
 <p>I have been following the latest developments in the AI agent landscape, and two potential attack scenarios came to my mind. The first is the classic Infostealer scenario. The second scenario is Agentic attacks which could be part of supply chain or a standalone payload abusing AI agents.</p>
-<doc-anchor-target id="scenario-1-infostealers">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-1-infostealers">#</doc-anchor-trigger>
-        <span>Scenario 1: Infostealers</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="scenario-1-infostealers">Scenario 1: Infostealers</h2>
 <p>Infostealers are nothing new, they are a persistent and well-established threat. Over the years, numerous threat research reports have shown that this threat is not going away anytime soon. Threat actors continue to refine their delivery techniques, using methods such as ClickFix-style social engineering to distribute stealer malware. So far the traditional infostealers targeted mostly browser cookies, saved passwords, crypto wallets and other sensitive information.</p>
 <p>In this scenario, we explore a critical question: what happens if infostealers begin targeting and exfiltrating data from AI agents? These agents may store credentials, API keys, configuration files, project data, and other sensitive information. The compromise of such data could significantly amplify the impact of a traditional infostealer infection.</p>
 <p>While writing this blog, I came across a report in The Hacker News about an infostealer campaign specifically targeting <a href="https://thehackernews.com/2026/02/infostealer-steals-openclaw-ai-agent.html">OpenClaw AI agent configuration files</a>. They have already begun adapting to the new environment.</p>
-<doc-anchor-target id="ai-agents-data-source">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-agents-data-source">#</doc-anchor-trigger>
-        <span>AI Agents Data Source</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ai-agents-data-source">AI Agents Data Source</h3>
 <p>Let&#x27;s imagine a threat actor executed the following attack and exfiltrated huge volume of AI Agents data from user machines.</p>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">flowchart TB
     A[&quot;🕵️&lt;br/&gt;Attacker&quot;]
@@ -245,7 +240,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -296,12 +291,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 <li>Potential secrets embedded in conversations</li>
 </ul>
 <p>This contextual intelligence can significantly enhance follow-on attacks.</p>
-<doc-anchor-target id="antigravity">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#antigravity">#</doc-anchor-trigger>
-        <span>Antigravity</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="antigravity">Antigravity</h4>
 <p><a href="https://antigravity.google/">Antigravity</a> is an agent-first IDE developed by Google DeepMind. It functions as a VS Code wrapper with extended capabilities for agentic workflows.</p>
 <p>Unlike many AI coding agents, Antigravity supports multiple operating modes:</p>
 <ul>
@@ -309,150 +299,96 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 <li><strong>Assistant mode</strong> – the user retains more control, and the agent provides targeted assistance.</li>
 </ul>
 <p>To demonstrate potential data exposure, I asked the Gemini model to generate a Python script containing hardcoded credentials.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/antigravity.png" alt="Antigravity - Chat" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/antigravity.png" alt="Antigravity - Chat" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2624" height="1824" />
     <figcaption class="caption">Antigravity - Chat</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="conversation-storage">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conversation-storage">#</doc-anchor-trigger>
-        <span>Conversation Storage</span>
-    </h5>
-</doc-anchor-target>
+<h5 id="conversation-storage">Conversation Storage</h5>
 <p>Antigravity stores conversation history under:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="conversation-storage-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">~/.gemini/antigravity/conversations</code></pre>
 </doc-codeblock></div>
 <p>The data is saved in encrypted Protocol Buffer (<code translate="no" v-pre>.pb</code>) files. These files are not easily readable using basic tools like <code translate="no" v-pre>strings</code> or standard text editors.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/antigravity-files.png" alt="Antigravity - Conversation Files" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/antigravity-files.png" alt="Antigravity - Conversation Files" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">Antigravity - Conversation Files</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="key-storage">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-storage">#</doc-anchor-trigger>
-        <span>Key Storage</span>
-    </h5>
-</doc-anchor-target>
+<h5 id="key-storage">Key Storage</h5>
 <p>On macOS, encryption keys are stored in the system Keychain. There are publicly available Python scripts capable of decrypting the conversation files using the Antigravity Safe Storage key.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/antigravity-keys.png" alt="Antigravity - Safe Storage Key" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/antigravity-keys.png" alt="Antigravity - Safe Storage Key" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1978" height="1290" />
     <figcaption class="caption">Antigravity - Safe Storage Key</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="code-tracker-artifacts">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#code-tracker-artifacts">#</doc-anchor-trigger>
-        <span>Code Tracker Artifacts</span>
-    </h5>
-</doc-anchor-target>
+<h5 id="code-tracker-artifacts">Code Tracker Artifacts</h5>
 <p>Even if decryption is unsuccessful, valuable artifacts remain accessible. For example: <code translate="no" v-pre>~/.gemini/antigravity/code_tracker</code> . This directory contains tracked source code and contextual metadata.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/antigravity-codetracker.png" alt="Antigravity - Code Tracker" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/antigravity-codetracker.png" alt="Antigravity - Code Tracker" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">Antigravity - Code Tracker</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="claude-code">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#claude-code">#</doc-anchor-trigger>
-        <span>Claude Code</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="claude-code">Claude Code</h4>
 <p>Claude Code is Anthropic’s agentic CLI coding assistant. It allows developers to delegate complex tasks such as refactoring, code generation, debugging, and repository-wide modifications directly from the terminal. Here I am asking the agent to read <code translate="no" v-pre>.env</code> file which had some github Keys, I used ollama for model provision since I didn&#x27;t had a premium account for their sonnet and opus models.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/claude-cli.png" alt="Claude - Chat" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/claude-cli.png" alt="Claude - Chat" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">Claude - Chat</figcaption>
 </figure>
-</p>
 <p>The chat history was stored under <code translate="no" v-pre>~/.claude/projects/</code> folder.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/claude-history.png" alt="Claude - History" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/claude-history.png" alt="Claude - History" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">Claude - History</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="codex">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#codex">#</doc-anchor-trigger>
-        <span>Codex</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="codex">Codex</h4>
 <p>Codex is an AI agent developed by OpenAI. Similar to Claude, it provides powerful agentic coding capabilities through a CLI-based interface. For this example I asked the agent to inspect a python script which had hardcoded docker api key. At the end of conversation the codex model suggested to rotate the keys.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/codex-cli.png" alt="Codex - Chat" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/codex-cli.png" alt="Codex - Chat" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">Codex - Chat</figcaption>
 </figure>
-</p>
 <p>However the conversation history and API key was found under : <code translate="no" v-pre>~/.codex/sessions/</code></p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/codex-history.png" alt="Codex - History" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/codex-history.png" alt="Codex - History" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">Codex - History</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="opencode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#opencode">#</doc-anchor-trigger>
-        <span>OpenCode</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="opencode">OpenCode</h4>
 <p>OpenCode is an opensource AI agent, it can be used with any models and supports features similar to Claude Code. Similar to codex example, some AWS keys were given to gpt 5.2 and the model refused to work with it, instead suggested to rotate the keys and consider them as compromised.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/opencode.png" alt="OpenCode - Chat" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/opencode.png" alt="OpenCode - Chat" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">OpenCode - Chat</figcaption>
 </figure>
-</p>
 <p>Unlike claude and codex, opencode stores conversational data in a database file under <code translate="no" v-pre>~/.opencode/opencode.db</code> and also under <code translate="no" v-pre>~/.opencode/storage/part</code> as json format. API key were found in the history files.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/opencode-history.png" alt="OpenCode - History" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/opencode-history.png" alt="OpenCode - History" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">OpenCode - History</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="detecting-the-exfiltration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#detecting-the-exfiltration">#</doc-anchor-trigger>
-        <span>Detecting the Exfiltration</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="detecting-the-exfiltration">Detecting the Exfiltration</h3>
 <p>So how can we detect potential exfiltration of AI agent data?</p>
 <p>Monitoring file paths is easier on both Windows and Linux because EDRs provide excellent visibility into file events. Even if you are not using an EDR, you can monitor the agent paths using <code translate="no" v-pre>Sysmon</code> on Windows or <code translate="no" v-pre>auditd</code> on Linux and build custom alerts.</p>
 <p>Here is a simple auditd rule to detect OpenCode data exfiltration :-</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div id="detecting-the-exfiltration-code-1" class="codeblock-wrapper"><doc-codeblock line-numbers>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">-a always,exit -F arch=b64 -S open,openat -F dir=/home/ubuntu/.local/share/opencode -F key=exfil_detect
 -a always,exit -F arch=b32 -S open,openat -F dir=/home/ubuntu/.local/share/opencode -F key=exfil_detect</code></pre>
 </doc-codeblock></div>
 <p>A python script was run to zip the opencode directory and drop it into the tmp directory. The detection was successful, auditd successfully captured the file read operations performed by the python3 process.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/detect-exfil.png" alt="Linux Data Exfiltration Detection" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/detect-exfil.png" alt="Linux Data Exfiltration Detection" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">Linux Data Exfiltration Detection</figcaption>
 </figure>
-</p>
 <p>macOS is a different case, some file events are detected by EDR solutions, while most others are not. Let&#x27;s take a look at how the events are detected in <a href="https://github.com/Brandon7CC/mac-monitor">Mac Monitor</a>, an advanced, stand-alone system monitoring tool tailor-made for macOS security research.</p>
 <p>The same script was ran but this time targeting claude.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/mac-exfil.png" alt="macOS Data Exfiltration" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/mac-exfil.png" alt="macOS Data Exfiltration" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1824" height="1488" />
     <figcaption class="caption">macOS Data Exfiltration</figcaption>
 </figure>
-</p>
 <p>The python execution and zip creation is visible in the EDR event stream.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/mac-exec.png" alt="macOS Data Exfiltration - Execution Detection" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/mac-exec.png" alt="macOS Data Exfiltration - Execution Detection" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2688" height="1892" />
     <figcaption class="caption">macOS Data Exfiltration - Execution Detection</figcaption>
 </figure>
-</p>
 <p>However the targeted claude folder couldn&#x27;t be found, So I guess this is a macOS limitation.</p>
-<p><figure class="content-center">
-    <img src="../../assets/img/ai_threats/mac-non.png" alt="macOS Data Exfiltration - No File Access Event" class="rounded-image-rounded border-image-border border-image-border-width" />
+<figure class="content-center">
+    <img src="../../assets/img/ai_threats/mac-non.png" alt="macOS Data Exfiltration - No File Access Event" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="2418" height="484" />
     <figcaption class="caption">macOS Data Exfiltration - No File Access Event</figcaption>
 </figure>
-</p>
 <p>Even if no proper host events are obtained, we can detect the exfiltration based on network signatures and correlating them with available host events.</p>
-<doc-anchor-target id="scenario-2-agentic-attacks">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scenario-2-agentic-attacks">#</doc-anchor-trigger>
-        <span>Scenario 2: Agentic Attacks</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="scenario-2-agentic-attacks">Scenario 2: Agentic Attacks</h2>
 <p>Just as defenders leverage AI for different DFIR use cases, threat actors have begun adopting these technologies in parallel. We are seeing an increase in the use of AI to develop custom C2 (Command &amp; Control) servers, implants, and broader malware infrastructures.</p>
 <p>We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs in real-time to bypass security controls.</p>
 <p>I have categorized this section into two primary sub-scenarios:</p>
@@ -462,21 +398,11 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 <li><p><strong>Agent Hijacking &amp; Abuse</strong>: Weaponizing legitimate, locally installed agents to perform malicious activities such as lateral movement or data harvesting.</p>
 </li>
 </ol>
-<doc-anchor-target id="ai-supply-chain-attacks">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-supply-chain-attacks">#</doc-anchor-trigger>
-        <span>AI Supply Chain Attacks</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ai-supply-chain-attacks">AI Supply Chain Attacks</h3>
 <p>The AI infrastructure has evolved significantly, introducing powerful features like MCP (<a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol</a>) for Function calling and <a href="https://agentskills.io/home">Agent Skills</a>.</p>
 <p>These new integrations have quickly become the most accessible and prominent vectors for supply chain compromise. By Embedding Malicious instructions and tools inside MCP servers and Skills, a threat actor can hijack an AI agent&#x27;s logic. Instead of just generating text, the agent can be manipulated to execute malicious programs, exfiltrate local files, or perform unauthorized actions on the host system.</p>
 <p>Check out this blog by Mohamed Ghobashy on <a href="https://securelist.com/model-context-protocol-for-ai-integration-abused-in-supply-chain-attacks/117473/">MCP supply chain attack</a> to see them in action.</p>
-<doc-anchor-target id="agent-hijacking--abuse">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#agent-hijacking--abuse">#</doc-anchor-trigger>
-        <span>Agent Hijacking &amp; Abuse</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="agent-hijacking--abuse">Agent Hijacking &amp; Abuse</h3>
 <p>While I was writing this, Checkpoint released a fantastic report - <a href="https://research.checkpoint.com/2026/ai-in-the-middle-turning-web-based-ai-services-into-c2-proxies-the-future-of-ai-driven-attacks/">AI in the Middle: Turning Web-Based AI Services into C2 Proxies &amp; The Future Of AI Driven Attacks</a>. This research explores several AI-driven attack scenarios, specifically covering API-based and AI-bundled malware. They also showcased an attack where Grok and Copilot was abused to act as Command-and-Control relays which was awesome and at the same time scary.</p>
 <p>As I continued exploring AI agents, I started thinking about an additional scenario :-</p>
 <div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre translate="no" class="mermaid w-full">flowchart TD
@@ -491,12 +417,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
     C --&gt;|&quot;Moving Laterally Across Network&quot;| D
     C --&gt;|&quot;Data Exfiltration&quot;| E</pre></div>
 <p>What if attackers abuse locally installed AI agents and use them as <code translate="no" v-pre>LOLBins</code> for lateral movement and other operations, without relying on API keys or bundled models?. Well, I plan to showcase this in my next post, where I will conduct a full adversary simulation and threat hunting exercise. Stay tuned!</p>
-<doc-anchor-target id="conclusion">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
-        <span>Conclusion</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="conclusion">Conclusion</h2>
 <p>As AI agents become more deeply integrated into enterprise workflows, they also introduce a new and evolving attack surface. Securing them requires more than traditional security architecture.</p>
 <p>Some points to be noted :-</p>
 <ul>
@@ -514,7 +435,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 </li>
 </ul>
 
-                <div id="retype-tags" class="flex items-center mt-6 mb-6 clear-both">
+                <div id="retype-tags" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mt-6 mb-6 clear-both">
                     <span>
                         <a href="../../tags/">
                             <svg class="inline-block -mb-px mr-1.5 text-body-link hover:text-body-link-hover" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
@@ -529,6 +450,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
                     <span>threat hunting</span>
                 </a></span>
                     </span>
+                
                 </div>
 
                 <!-- Required only on API pages -->
