@@ -7,24 +7,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.827994379111">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.847345342872">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Android Forensics - An Introduction</title>
     <meta name="title" content="Android Forensics - An Introduction">
-    <meta name="description" content="Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example">
+    <meta name="description" content="Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example on analysis and recovery of deleted files from an Android device image.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://nxb1t.github.io/digital-forensics/android_forensics/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://nxb1t.github.io/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nxb1t.github.io/digital-forensics/android_forensics/">
     <meta property="og:title" content="Android Forensics - An Introduction">
-    <meta property="og:description" content="Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example">
+    <meta property="og:description" content="Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example on analysis and recovery of deleted files from an Android device image.">
     <meta property="og:image" content="https://nxb1t.github.io/assets/img/android_forensics/cover.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -36,20 +37,23 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://nxb1t.github.io/digital-forensics/android_forensics/">
     <meta name="twitter:title" content="Android Forensics - An Introduction">
-    <meta name="twitter:description" content="Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example">
+    <meta name="twitter:description" content="Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example on analysis and recovery of deleted files from an Android device image.">
     <meta name="twitter:image" content="https://nxb1t.github.io/assets/img/android_forensics/cover.jpg">
     <meta name="twitter:image:alt" content="Android Forensics - An Introduction">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://nxb1t.github.io/digital-forensics/android_forensics.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.827994379111" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.847345342872" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.827994379111" defer></script>
-    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.4.0" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.847345342872" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.847345342872" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.847345342872" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.6.0" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -191,9 +195,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="android-forensics---an-introduction">Android Forensics - An Introduction</h1>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -221,15 +227,20 @@
 <p>Hello Friends, <br> In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example on analysis and recovery of deleted files from an Android device image.</p>
 <h4 id="key-terminologies-used-in-this-blog">Key Terminologies used in this blog</h4>
 <ul>
-<li><p>Acquisition : The gathering of sensitive data during a digital forensic investigation</p>
+<li>
+<p>Acquisition : The gathering of sensitive data during a digital forensic investigation</p>
 </li>
-<li><p>Forensically Soundness : The application of a transparent digital forensics process that preserves the original meaning of data for production in a court of law</p>
+<li>
+<p>Forensically Soundness : The application of a transparent digital forensics process that preserves the original meaning of data for production in a court of law</p>
 </li>
-<li><p>Disk Image/Dump : A disk image/dump is a file containing the contents and structure of a disk volume or of an entire data storage device.</p>
+<li>
+<p>Disk Image/Dump : A disk image/dump is a file containing the contents and structure of a disk volume or of an entire data storage device.</p>
 </li>
-<li><p>ROM : Android Operating System, Stock ROMs are the Android OS which comes preinstalled with the phone. Custom ROMs are the modified Android OS maintained by open source communities.</p>
+<li>
+<p>ROM : Android Operating System, Stock ROMs are the Android OS which comes preinstalled with the phone. Custom ROMs are the modified Android OS maintained by open source communities.</p>
 </li>
-<li><p>Block Device : Block Devices tend to be storage devices, capable of buffering output and storing data for later retreival. HDD, SSD etc are example for block device.</p>
+<li>
+<p>Block Device : Block Devices tend to be storage devices, capable of buffering output and storing data for later retreival. HDD, SSD etc are example for block device.</p>
 </li>
 </ul>
 <h2 id="why-android-forensics">Why Android Forensics</h2>
@@ -253,13 +264,16 @@ identifying these threats on the incident.</p>
 <p><strong>Analysis</strong> : Analyse the collected evidence.</p>
 <h3 id="types-of-android-device-acquisitions">Types Of Android Device Acquisitions</h3>
 <ul>
-<li><p><strong>Physical Acquisition</strong> <br>
+<li>
+<p><strong>Physical Acquisition</strong> <br>
 The process of creating a bit-by-bit copy of the storage device is known as Physical acquisition. With this method, we can analyse deleted files and system files. This type of acquisition can be done using software with elevated privilege (root access) or directly imaging the storage device using JTAG Interface, EDL Mode (bootloader implemented by SOC devs).</p>
 </li>
-<li><p><strong>Logical Acquisition</strong> <br>
+<li>
+<p><strong>Logical Acquisition</strong> <br>
 In this process, we are copying existing files from the device storage. Which means we can&#x27;t analyse the deleted files and also key system files of the Android OS. This type of acquisition doesn&#x27;t require root access.</p>
 </li>
-<li><p><strong>Cloud Acquisition</strong> <br>
+<li>
+<p><strong>Cloud Acquisition</strong> <br>
 This method relies on cloud backup and other cloud data source. For example, WhatsApp chats can be analysed using WhatsApp cloud backups.</p>
 </li>
 </ul>
@@ -277,6 +291,15 @@ This method relies on cloud backup and other cloud data source. For example, Wha
 </figure>
 <h3 id="android-forensics-tools">Android Forensics Tools</h3>
 <p>List of different tools used in the Android Forensics realm.</p>
+<retype-table copy-text="| Tool Name | License Type | Description |
+| --------- | ------------ | ----------- |
+| [Autopsy Sleuthkit](https://www.autopsy.com/download/) | [!badge variant=&quot;success&quot; text=&quot;Free&quot;] | Autopsy is a GUI front-end of TSK with many custom modules and add-ons. |
+| [Belkasoft Evidence Center X](https://belkasoft.com/x) | [!badge variant=&quot;warning&quot; text=&quot;Paid&quot;] | Evidence Center X is a flagship tool by Belkasoft for computer, mobile and cloud forensics. It can acquire and analyze a wide range of mobile devices and computers. |
+| [Cellebrite UFED](https://cellebrite.com/en/ufed/) | [!badge variant=&quot;warning&quot; text=&quot;Paid&quot;] | Cellebrite UFED is a powerful platform to dump and analyse different portable devices like Mobile Phones, Drones , SIM card etc. |
+| [Sleuthkit (TSK)](https://www.sleuthkit.org/) | [!badge variant=&quot;success&quot; text=&quot;Free&quot;] | TSK is a collection of command line tools and a C library that allows you to analyze disk images and recover files from them. |
+| [Magnet Acquire](https://www.magnetforensics.com/resources/magnet-acquire/) | [!badge variant=&quot;success&quot; text=&quot;Free&quot;] | Easily acquire forensic images of any iOS or Android device, hard drive, and removable media |
+| [Magnet AXIOM](https://www.magnetforensics.com/products/magnet-axiom/) | [!badge variant=&quot;warning&quot; text=&quot;Paid&quot;] | Magnet AXIOM is another platform capable of analyzing wide range of mobile devices. |
+| [Oxygen Forensics Detective](https://www.oxygen-forensic.com/en/products/oxygen-forensic-detective)  | [!badge variant=&quot;warning&quot; text=&quot;Paid&quot;] | Oxygen Forensics Detective is an all-in-one forensic software platform built to extract, decode, and analyze data from multiple digital sources. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -339,6 +362,7 @@ This method relies on cloud backup and other cloud data source. For example, Wha
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="android-os">Android OS</h2>
 <hr>
 <p>Android is a mobile operating system based on modified version of the Linux kernel. Android&#x27;s kernel is based
@@ -361,6 +385,16 @@ in the recent Android 13 update (as of writing this blog).</p>
     F --&gt; G[userdata]
     G --&gt; H[vendor]
     H --&gt; I[cust]</pre></div>
+<retype-table copy-text="| Partition Name | Description |
+| -------------- | ----------- |
+| **boot**       | Contains a kernel image and a generic ramdisk |
+| **system**     | Android Framwork |
+| **recovery**   | Contains the recovery image. The recovery image holds a recovery program that lets the device boot into a recovery console for performing advanced recovery and maintenance operations. It contains a second complete Linux system i.e. independent OS, including a user-interface application, kernel and the special recovery binary that reads a package and uses its contents to update i.e, flash or wipe itself or any other partition particularly during OTA updates |
+| **cache** | Temporary data storage |
+| **misc**  | Used by recovery partition |
+| **userdata / data** | Contains user-installed apps, media files and other user data |
+| **vendor** | Contains proprietary files which are not distributed with AOSP, ie system applications and libraries added by OEMS |
+| **cust** | Contains some preloaded system apss and regional settings which are installed on first use |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -405,6 +439,7 @@ in the recent Android 13 update (as of writing this blog).</p>
 </tbody>
 </table>
 </div>
+</retype-table>
 <figure class="content-center">
     <img src="../../assets/img/android_forensics/partitions.png" alt="" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="782" height="455" />
     <figcaption class="caption"></figcaption>
@@ -462,9 +497,11 @@ Encryption : FDE ( with default password ) <br></p>
 </ul>
 <h3 id="preparing-the-device">Preparing The Device</h3>
 <ul>
-<li><p>Unlock Bootloader : Each Manufacturer has different methods to unlock bootloader. Refer to device forums to find the correct procedure, also please note that some manufacturers don&#x27;t allow unlocking the bootloader.</p>
+<li>
+<p>Unlock Bootloader : Each Manufacturer has different methods to unlock bootloader. Refer to device forums to find the correct procedure, also please note that some manufacturers don&#x27;t allow unlocking the bootloader.</p>
 </li>
-<li><p>Install Custom Recovery : There are many custom recovery projects for Android. <a href="https://twrp.me/Devices/">TWRP Custom Recovery</a> is the most popular one among them.
+<li>
+<p>Install Custom Recovery : There are many custom recovery projects for Android. <a href="https://twrp.me/Devices/">TWRP Custom Recovery</a> is the most popular one among them.
 We can start a temporary recovery session with the commands given below.
 To Permanently install TWRP in the device, refer to this <a href="https://www.xda-developers.com/how-to-install-twrp/">XDA Forums Post</a></p>
 </li>
@@ -753,6 +790,6 @@ but shouldn&#x27;t be neglected. For example hiding text inside Audio, Image fil
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Android Forensics - An Introduction", level: 2, icon: "file", hasPrism: true, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Android Forensics - An Introduction", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: true, hasMath: false, tocDepth: 23, "md": "/digital-forensics/android_forensics.md" }</script>
 </body>
 </html>

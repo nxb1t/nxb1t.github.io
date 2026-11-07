@@ -7,24 +7,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.827994379111">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.847345342872">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>AI Agents as Attack Vectors</title>
     <meta name="title" content="AI Agents as Attack Vectors">
-    <meta name="description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am">
+    <meta name="description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am looking into a different perspective: the potential abuse of AI agents by threat actors and the impact they could have on an enterprise environment.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://nxb1t.github.io/artificial-intelligence/ai_threats/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://nxb1t.github.io/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nxb1t.github.io/artificial-intelligence/ai_threats/">
     <meta property="og:title" content="AI Agents as Attack Vectors">
-    <meta property="og:description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am">
+    <meta property="og:description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am looking into a different perspective: the potential abuse of AI agents by threat actors and the impact they could have on an enterprise environment.">
     <meta property="og:image" content="https://nxb1t.github.io/assets/img/ai_threats/antigravity.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -36,20 +37,23 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://nxb1t.github.io/artificial-intelligence/ai_threats/">
     <meta name="twitter:title" content="AI Agents as Attack Vectors">
-    <meta name="twitter:description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am">
+    <meta name="twitter:description" content="Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am looking into a different perspective: the potential abuse of AI agents by threat actors and the impact they could have on an enterprise environment.">
     <meta name="twitter:image" content="https://nxb1t.github.io/assets/img/ai_threats/antigravity.png">
     <meta name="twitter:image:alt" content="AI Agents as Attack Vectors">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://nxb1t.github.io/artificial-intelligence/ai_threats.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.827994379111" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.847345342872" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.827994379111" defer></script>
-    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.4.0" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.847345342872" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.847345342872" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.847345342872" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../resources/js/mermaid.js?v=4.6.0" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -191,9 +195,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="ai-agents-as-attack-vectors">AI Agents as Attack Vectors</h1>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -254,6 +260,12 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
         </div>
     </div>
 </div>
+<retype-table copy-text="| AI Agent | Data Path  |
+| ------------ | ------------- |
+| Antigravity  | `~/.gemini/`   | 
+| Claude       | `~/.claude/`   | 
+| Codex        | `~/.codex/`    |
+| OpenCode     | `~/.local/share/opencode/` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -282,6 +294,7 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 </tbody>
 </table>
 </div>
+</retype-table>
 <p>If an attacker exfiltrates the entire data path of agents, they can gain:</p>
 <ul>
 <li>Source code snapshots</li>
@@ -393,9 +406,11 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 <p>We are entering a new phase of malware evolution where payloads are becoming semi-autonomous or fully autonomous through AI integration. This shift grants attackers the ability to deploy malware at scale, dynamically altering TTPs in real-time to bypass security controls.</p>
 <p>I have categorized this section into two primary sub-scenarios:</p>
 <ol>
-<li><p><strong>AI Supply Chain Attacks</strong>: Embedding Malicious instructions and tools inside Agent Skills and MCP servers.</p>
+<li>
+<p><strong>AI Supply Chain Attacks</strong>: Embedding Malicious instructions and tools inside Agent Skills and MCP servers.</p>
 </li>
-<li><p><strong>Agent Hijacking &amp; Abuse</strong>: Weaponizing legitimate, locally installed agents to perform malicious activities such as lateral movement or data harvesting.</p>
+<li>
+<p><strong>Agent Hijacking &amp; Abuse</strong>: Weaponizing legitimate, locally installed agents to perform malicious activities such as lateral movement or data harvesting.</p>
 </li>
 </ol>
 <h3 id="ai-supply-chain-attacks">AI Supply Chain Attacks</h3>
@@ -421,17 +436,23 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 <p>As AI agents become more deeply integrated into enterprise workflows, they also introduce a new and evolving attack surface. Securing them requires more than traditional security architecture.</p>
 <p>Some points to be noted :-</p>
 <ul>
-<li><p><strong>Adopt a &quot;Defense-in-Depth&quot; Mindset</strong>: The first and most critical step is acknowledging that no security control is perfect. While an EDR might catch 99% of threats, the remaining 1% can still cause catastrophic damage. Rather than relying on a single policy, develop a multi-layered security architecture to minimize the &quot;blast radius&quot; and overall impact.</p>
+<li>
+<p><strong>Adopt a &quot;Defense-in-Depth&quot; Mindset</strong>: The first and most critical step is acknowledging that no security control is perfect. While an EDR might catch 99% of threats, the remaining 1% can still cause catastrophic damage. Rather than relying on a single policy, develop a multi-layered security architecture to minimize the &quot;blast radius&quot; and overall impact.</p>
 </li>
-<li><p><strong>Do Not Ignore Low-Severity Alerts</strong>: Seemingly low-severity alerts can often represent early reconnaissance, policy testing, or partial exploitation attempts. Treat low-severity signals as potential indicators of emerging attack chains, correlate them with other telemetry, and investigate patterns over time rather than dismissing them in isolation.</p>
+<li>
+<p><strong>Do Not Ignore Low-Severity Alerts</strong>: Seemingly low-severity alerts can often represent early reconnaissance, policy testing, or partial exploitation attempts. Treat low-severity signals as potential indicators of emerging attack chains, correlate them with other telemetry, and investigate patterns over time rather than dismissing them in isolation.</p>
 </li>
-<li><p><strong>Monitor Agent Activity and File Integrity</strong>: Proactively monitor the file paths and directories used by AI agents. It is essential to detect if unauthorized or malicious programs are accessing agent configurations, memory logs, or integration settings.</p>
+<li>
+<p><strong>Monitor Agent Activity and File Integrity</strong>: Proactively monitor the file paths and directories used by AI agents. It is essential to detect if unauthorized or malicious programs are accessing agent configurations, memory logs, or integration settings.</p>
 </li>
-<li><p><strong>Audit the AI Supply Chain</strong>: Supply chain attacks in the AI ecosystem are real. Just as we audit npm or Python packages for malicious code, it is now crucial to perform security audits on MCP servers and Agent Skills. Enforce strict governance and allowlisting policies to prevent supply chain compromise.</p>
+<li>
+<p><strong>Audit the AI Supply Chain</strong>: Supply chain attacks in the AI ecosystem are real. Just as we audit npm or Python packages for malicious code, it is now crucial to perform security audits on MCP servers and Agent Skills. Enforce strict governance and allowlisting policies to prevent supply chain compromise.</p>
 </li>
-<li><p><strong>Leverage Continuous Threat Intelligence</strong>: Regularly ingest Threat Intelligence (TI) feeds and industry reports to stay current with the latest AI-driven attack trends and adversary tactics.</p>
+<li>
+<p><strong>Leverage Continuous Threat Intelligence</strong>: Regularly ingest Threat Intelligence (TI) feeds and industry reports to stay current with the latest AI-driven attack trends and adversary tactics.</p>
 </li>
-<li><p><strong>Proactive Threat Hunting</strong>: Identify new AI features and potentially abusable vectors as they are released. Use these findings to build hypothetical attack scenarios and conduct proactive threat-hunting exercises within your environment.</p>
+<li>
+<p><strong>Proactive Threat Hunting</strong>: Identify new AI features and potentially abusable vectors as they are released. Use these findings to build hypothetical attack scenarios and conduct proactive threat-hunting exercises within your environment.</p>
 </li>
 </ul>
 
@@ -517,6 +538,6 @@ In my previous <a href="https://nxb1t.is-a.dev/artificial-intelligence/mcp_for_d
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "AI Agents as Attack Vectors", level: 2, icon: "file", hasPrism: true, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "AI Agents as Attack Vectors", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: true, hasMath: false, tocDepth: 23, "md": "/artificial-intelligence/ai_threats.md" }</script>
 </body>
 </html>

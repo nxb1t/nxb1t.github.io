@@ -1,0 +1,30 @@
+﻿# Who Am I ?
+
+> Hello everyone, I am Nashid (nxb1t), a Cyber Threat Hunter. I am a passionate blogger who enjoys writing about my insights and thoughts in the areas of Malware Analysis, Threat Hunting and DFIR.
+
+- [Who Am I ?](https://nxb1t.github.io/index.md): Who Am I ?
+
+## Artificial Intelligence
+
+- [AI Agents as Attack Vectors](https://nxb1t.github.io/artificial-intelligence/ai_threats.md): Hello everyone, In my previous post, I explored the use of MCP servers and LLM for DFIR use cases and highlighted their benefits. In this blog, I am looking into a different perspective: the potential abuse of AI agents by threat actors and the impact they could have on an enterprise environment.
+- [MCP for DFIR](https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir.md): Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more. This got me thinking about applying it to DFIR use cases, like Digital Forensics and Malware Analysis.
+
+## Digital Forensics
+
+- [Android Forensics - An Introduction](https://nxb1t.github.io/digital-forensics/android_forensics.md): Hello Friends, In this blog, we will explore Android Forensics, the process of acquiring Android device, anti-forensics techniques, and a practical example on analysis and recovery of deleted files from an Android device image.
+
+## Incident Response
+
+- [Active Directory Lab](https://nxb1t.github.io/incident-response/ad_lab.md): Hello everyone, welcome to my blog on setting up a simple AD lab for practicing Incident Response, Threat Hunting, and Digital Forensics. Once set up, the lab can be easily customized based on use cases, making it more flexible.
+- [Practical Incident Response - Active Directory](https://nxb1t.github.io/incident-response/practical_ir_ad.md): Hello everyone! It’s been a while since my last blog post. This time, I wanted to make a blog on simulating Incident Response in an Active Directory environment by doing some common attack scenarios, so we can get some basic level of practical experience around this area.
+
+## Malware Analysis
+
+- [A Closer Look At Rust Based Malware](https://nxb1t.github.io/malware-analysis/rust_malware.md): For Educational purpose only Spreading Malware is a violation of the law, so please don't create and send any malware using the tactics provided here to anyone I am not responsible for any damage All the malware samples are created using the codes taken from OffensiveRust GitHub repository.
+- [Analyzing A GO Malware](https://nxb1t.github.io/malware-analysis/go_malware.md): Hello Friends, This post covers my analysis of a Linux-based Go malware sample. It used anti-VM evasion techniques, which made it harder for sandbox environments to detect.
+- [Reversing Android Malware](https://nxb1t.github.io/malware-analysis/reverse_android.md): Malware (Malicious Software) is a type of software that causes harm to your digital devices. These digital viruses can spy on your daily lives, steal money, encrypt files or make your system completely inoperable.
+- [Why Malware Analysis Goes Beyond Sandboxes](https://nxb1t.github.io/malware-analysis/sandbox_reverse.md): Hi everyone! This is a short post to share a thought I had while working on a malware sample: Should we rely only on sandboxes?, I started thinking about this because the malware I was analyzing wasn’t detected by sandbox environments.
+
+## Threat Hunting
+
+- [Weaponizing Magisk Modules](https://nxb1t.github.io/threat-hunting/magisk_modules.md): For Educational purpose only. Spreading Malware is a violation of the law, so please don't create and send any malware using the tactics discussed here to anyone.

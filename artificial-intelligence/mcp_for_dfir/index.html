@@ -7,24 +7,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.827994379111">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.847345342872">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.4.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>MCP for DFIR</title>
     <meta name="title" content="MCP for DFIR">
-    <meta name="description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more.">
+    <meta name="description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more. This got me thinking about applying it to DFIR use cases, like Digital Forensics and Malware Analysis.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://nxb1t.github.io/sitemap.xml">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir/">
     <meta property="og:title" content="MCP for DFIR">
-    <meta property="og:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more.">
+    <meta property="og:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more. This got me thinking about applying it to DFIR use cases, like Digital Forensics and Malware Analysis.">
     <meta property="og:image" content="https://nxb1t.github.io/assets/img/mcp_for_dfir/mcp_cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -36,19 +37,22 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir/">
     <meta name="twitter:title" content="MCP for DFIR">
-    <meta name="twitter:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more.">
+    <meta name="twitter:description" content="Hello Everyone, I have been seeing many posts regarding MCP servers on X (Twitter) lately, featuring numerous toolkits for coding, documentation, and more. This got me thinking about applying it to DFIR use cases, like Digital Forensics and Malware Analysis.">
     <meta name="twitter:image" content="https://nxb1t.github.io/assets/img/mcp_for_dfir/mcp_cover.png">
     <meta name="twitter:image:alt" content="MCP for DFIR">
+
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://nxb1t.github.io/artificial-intelligence/mcp_for_dfir.md">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../assets/img/favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.4.0.827994379111" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.847345342872" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.827994379111" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.827994379111" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.847345342872" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.847345342872" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.847345342872" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -190,9 +194,11 @@
 <div class="flex">
     <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
         <main class="relative pb-12 lg:pt-2">
-            <div class="retype-markdown" id="retype-content">
+            <div class="relative retype-markdown" id="retype-content">
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
                 <!-- Page content  -->
 <h1 id="mcp-for-dfir">MCP for DFIR</h1>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -223,6 +229,11 @@ I have been seeing many posts regarding MCP servers on X (Twitter) lately, featu
 While there are already many MCP servers available for DFIR, I wanted to build some on my own to better understand the architecture, as well as explore some readily available servers from reputable sources. So In this post, I will cover setting up a local LLM and building some simple MCP servers specifically for DFIR.</p>
 <h2 id="a-brief-intro-on-llm-and-mcp">A Brief Intro on LLM and MCP</h2>
 <p>An LLM, or Large Language Model, is a type of AI model trained on vast amounts of data to understand, generate, and process human-like language. There are a few key terms to know when dealing with LLM models:</p>
+<retype-table copy-text="| Term | Definition |
+| ----- | ----------- |
+| Parameter | The internal weights and biases of a model. The higher the parameter count, the better the results. |
+| Tokens | Tokens are pieces of words processed by the LLM models. A word can be split into different pieces to form a token. |
+| Context Length / Window | The amount of text the LLM can “remember” and consider when generating a response, including both the user’s inputs and the model's own outputs. Larger context sizes allow for more nuanced and relevant output. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -247,6 +258,7 @@ While there are already many MCP servers available for DFIR, I wanted to build s
 </tbody>
 </table>
 </div>
+</retype-table>
 <p>The <a href="https://modelcontextprotocol.io/docs/getting-started/intro">Model Context Protocol (MCP)</a> is an open standard that allows an AI model to connect with and use external tools, data sources, and APIs. The protocol is designed to provide the AI with context and the ability to act on that information. With the help of MCP, it is possible to perform many tasks using natural language, making analysis and research much easier.</p>
 <figure class="content-center">
     <img src="../../assets/img/mcp_for_dfir/diagram.png" alt="MCP Architecture Diagram" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1660" height="1284" />
@@ -351,6 +363,10 @@ if __name__ == &quot;__main__&quot;:
     mcp.run(transport='stdio')</code></pre>
 </doc-codeblock></div>
 <p>There are two primary transport methods for MCP servers:</p>
+<retype-table copy-text="| Transport Type | Description |
+| --- | --- |
+| stdio | The client launches the MCP server as a subprocess and communicates through standard input/output channels. Errors are sent to stderr. |
+| Streamable HTTP | The server operates as an independent process that can handle multiple connections. The MCP client communicates with the server via HTTP GET/POST requests at a single endpoint (e.g., `/mcp`). |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -371,6 +387,7 @@ if __name__ == &quot;__main__&quot;:
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="configuring-mcp-server">Configuring MCP Server</h3>
 <p>Here is how to configure an MCP server for different open-source LLM clients.</p>
 <h4 id="openwebui-1">OpenWebUI</h4>
@@ -697,11 +714,14 @@ services:
 <p>Its crazy to see the MCP servers in action for DFIR use cases , they are cool and reduces so many repeated tasks while giving greater details on the data.</p>
 <p>However, a few important considerations to keep in mind:</p>
 <ul>
-<li><p><strong>AI is not the final answer</strong>: Always verify AI-generated findings manually. Hallucinations and misinterpretations can lead you down the wrong path during an investigation.</p>
+<li>
+<p><strong>AI is not the final answer</strong>: Always verify AI-generated findings manually. Hallucinations and misinterpretations can lead you down the wrong path during an investigation.</p>
 </li>
-<li><p><strong>Security implications</strong>: MCP servers introduce new attack surfaces. A great blog post by jro explains the potential for <a href="https://jro.sg/ida-mcp-exec.html">Code Execution in MCP Servers</a>. Supply chain attacks are another concern, always audit MCP servers before deploying them in your environment, and stick to reputable sources.</p>
+<li>
+<p><strong>Security implications</strong>: MCP servers introduce new attack surfaces. A great blog post by jro explains the potential for <a href="https://jro.sg/ida-mcp-exec.html">Code Execution in MCP Servers</a>. Supply chain attacks are another concern, always audit MCP servers before deploying them in your environment, and stick to reputable sources.</p>
 </li>
-<li><p><strong>Isolation matters</strong>: Run your LLM and MCP stack in isolated environments (VMs or containers) to prevent accidental data exposure and contain any potential security issues.</p>
+<li>
+<p><strong>Isolation matters</strong>: Run your LLM and MCP stack in isolated environments (VMs or containers) to prevent accidental data exposure and contain any potential security issues.</p>
 </li>
 </ul>
 <p>That&#x27;s all for this post. I hope you enjoyed it, happy hunting!</p>
@@ -788,6 +808,6 @@ services:
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "MCP for DFIR", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        <script data-cfasync="false">window.__DOCS__ = { "title": "MCP for DFIR", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/artificial-intelligence/mcp_for_dfir.md" }</script>
 </body>
 </html>
